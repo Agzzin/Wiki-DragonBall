@@ -1,29 +1,34 @@
 .header {
-   background: linear-gradient(160deg, #FF8A00 0%, #FF6A00 40%, #FF3C00 100%);
+  background: linear-gradient(160deg, #ff8a00 0%, #ff6a00 40%, #ff3c00 100%);
   padding-top: 2rem;
   margin: auto;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 2rem;
 }
 
 .button-encyclopedia {
-    background-color: rgba(250, 250, 250, 0.168);
-    border: none;
-    color: #fff;
-    padding: 10px 10px 10px 10px;
-    border-radius: 40px;
+  background-color: rgba(250, 250, 250, 0.168);
+  border: none;
+  color: #fff;
+  padding: 10px 10px 10px 10px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .encyclopedia-text {
   text-align: center;
   color: #fff;
   font-size: 1rem;
+  margin-left: 10px;
 }
 
-.dragon-ball-section{
-    padding-bottom: 3rem;
+.dragon-ball-section {
+  padding-bottom: 3rem;
 }
 
 .h1-dragon-ball {
@@ -54,28 +59,59 @@
   padding-bottom: 1rem;
 }
 
-.b-exploration-wiki{
-    padding: 1rem 2.3rem;
-    border: none;
-    background-color: #fff;
-    border-radius: 10px;
+.b-exploration-wiki {
+  padding: 1rem 2.3rem;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 10px;
 }
 
-.b-exploration-sagas{
-    padding: 1rem 2.3rem;
-    border: none;
-    background-color: #fff;
-    border-radius: 10px;
+.b-exploration-sagas {
+  padding: 1rem 2.3rem;
+  border: none;
+  background-color: #fff;
+  border-radius: 10px;
 }
 
-.p-exploration-sagas{
-    color: #fff;
-    font-size: 1rem;
-    font-weight: bold;
+.p-exploration-sagas {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
-.p-exploration-wiki{
-    color: #F16F10;
-    font-size: 1rem;
-    font-weight: bold;
+.p-exploration-wiki {
+  margin-left: 10px;
+  color: #f16f10;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.wiki-main{
+  padding-top: 3rem ;
+  background-color: #000;
+  margin: auto;
+}
+
+.explore-wiki{
+  text-align: center;
+}
+
+.explore-wiki-h1{
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.explore-wiki-p{
+  color: #909FB3;
+}
+
+.cards-curisioties{
+  padding-top: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4%;
 }
