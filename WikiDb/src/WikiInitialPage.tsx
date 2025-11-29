@@ -1,7 +1,15 @@
-import { ChevronRight, Search, Sparkles } from "lucide-react";
+import {
+  ChevronRight,
+  Search,
+  Sparkles,
+  Users,
+  Tv,
+  Zap,
+  Shield,
+} from "lucide-react";
 import "./WikiInitialPage.css";
-import { CardCuriosities } from "../src/Components/cardCuriosities";
-import { Users, Tv, Zap } from "lucide-react";
+import { CardCuriosities } from "./Components/CardCuriosities";
+import { CardPerson } from "./Components/CardPerson";
 
 function WikiInitialPage() {
   return (
@@ -73,12 +81,51 @@ function WikiInitialPage() {
           </section>
         </section>
 
-        <section>
-          <section>
-            <h1>Personagens em Destaque</h1>
-            <button>Ver todos</button>
+        <section className="emphasis">
+          <section className="emphasis-display">
+            <h1 className="person-emphasis">Personagens em Destaque</h1>
+            <button className="emphasis-button">
+              <p className="button-p">Ver todos</p>
+              <ChevronRight size={22} color="#EA9B09" />
+            </button>
           </section>
-          <p>Conheça os guerreiros mais icônicos</p>
+          <p className="emphasis-p">Conheça os guerreiros mais icônicos</p>
+          <section className="section-cards">
+            <CardPerson
+              race="Sayajin"
+              image={
+                "https://i.pinimg.com/736x/a5/a7/f9/a5a7f9fad4ce2a546e053c95005e63b0.jpg"
+              }
+              name="Broly"
+              firstAppearance="Dragon Ball Z: O Poder Invencível (1993)"
+              transform="Super Saiyajin Lendário"
+              icon={Shield}
+            />
+            <CardPerson
+              race="Saiyajin"
+              image="https://uploads.alternativanerd.com.br/wp-content/uploads/2018/03/AN_Goku-Intinto-Superior.jpg"
+              name="Goku"
+              firstAppearance="Dragon Ball (1986)"
+              transform={["Super Saiyajin", "Super Saiyajin Blue", "Ultra Instinto"]}
+              icon={Shield}
+            />
+            <CardPerson
+              race="Saiyajin"
+              image="https://wallpapers.com/images/hd/majin-vegeta-smile-5g4t1zilgzsodudn.jpg "
+              name="Vegeta"
+              firstAppearance="Dragon Ball Z (1989)"
+              transform={["Super Saiyajin", "Super Saiyajin Blue", "Ultra Ego"]}
+              icon={Shield}
+            />
+            <CardPerson
+              race="Kaioshin"
+              image="https://ovicio.com.br/wp-content/uploads/2019/12/20191201-goku-black-01-1280x720.jpg"
+              name="Zamasu"
+              firstAppearance="Dragon Ball Super (2015)"
+              transform="Super Saiyajin Rosé"
+              icon={Shield}
+            />
+          </section>
         </section>
       </main>
 
