@@ -6,6 +6,7 @@ import {
   Tv,
   Zap,
   Shield,
+  BookOpen
 } from "lucide-react";
 import "./WikiInitialPage.css";
 import { CardCuriosities } from "./Components/CardCuriosities";
@@ -130,10 +131,13 @@ function WikiInitialPage() {
       </main>
 
       <footer>
-        <section>
-          <h1>Dragon Ball Wiki</h1>
+        <section className="footer-wiki">
+          <section className="box-icon-footer">
+            <BookOpen color="#fff" size={20}/>
+          </section>
+          <h1 className="h1-wiki">Dragon Ball Wiki</h1>
         </section>
-        <p>A enciclopédia definitiva do universo Dragon Ball</p>
+        <p className="p-wiki">A enciclopédia definitiva do universo Dragon Ball</p>
       </footer>
     </section>
   );

@@ -74,12 +74,16 @@
   border: none;
   background-color: #fff;
   border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease; 
+  border: none;
 }
 
 .p-exploration-sagas {
   color: #fff;
   font-size: 1rem;
   font-weight: bold;
+  transition: all 0.2s ease; 
 }
 
 .p-exploration-wiki {
@@ -87,6 +91,17 @@
   color: #f16f10;
   font-size: 1rem;
   font-weight: bold;
+}
+
+.b-exploration-sagas:hover{
+  background-color: #f16f10;
+  border: 1px solid #ffffff70;
+  color: #000;
+  
+}
+
+.b-exploration-sagas:hover .p-exploration-sagas {
+  color: #000; 
 }
 
 .wiki-main{
@@ -114,7 +129,19 @@
   align-items: center;
   justify-content: center;
   gap: 4%;
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
+
+.box {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.box:hover {
+  transform: scale(1.05);
+}
+
 
 .emphasis{
   background-color: #000;
@@ -156,4 +183,39 @@
   align-items: center;
   justify-content: center;
   gap: 2rem;
+}
+
+footer{
+  background-color: #000;
+  border-top: 1px solid #ffffff29;
+}
+
+
+.footer-wiki{
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 2rem;
+}
+
+.box-icon-footer{
+  background-color: #F66623;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.h1-wiki{
+  color: #fff;
+}
+
+.p-wiki{
+  padding: 3rem 0 3rem 0  ;
+  color: #ffffff92;
+  text-align: center;
 }
