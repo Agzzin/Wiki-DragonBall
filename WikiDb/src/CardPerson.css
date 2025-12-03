@@ -32,7 +32,7 @@
 .race {
   position: absolute;
   color: #e2b71a;
-  transform: translate(40%, 30%);
+  transform: translate(30%,20%);
 }
 
 .image-person {
@@ -108,4 +108,13 @@
 .transform {
   padding: 0.2rem 0.5rem;
   color: #e2b71a;
+}
+
+@media (max-width: 480px) {
+  .container-person{
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
 }
