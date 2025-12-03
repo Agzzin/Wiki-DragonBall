@@ -220,6 +220,17 @@ footer{
   text-align: center;
 }
 
+@media (min-width: 481px) and (max-width: 1024px) {
+  .section-cards{
+     width: 100%;
+    display: flex;
+    flex-wrap: wrap;       
+    justify-content: center;
+    gap: 3rem;           
+    padding: 1rem;
+  }
+}
+
 
 @media (max-width: 480px) {
   .h1-dragon-ball{

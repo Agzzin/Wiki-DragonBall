@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import "../CardPerson.css";
+import "../styles/CardPerson.css";
 
 type CardPersonProps = {
   race: string;

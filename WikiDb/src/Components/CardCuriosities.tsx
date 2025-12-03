@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import "../CardCuriosities.css";
+import "../styles/CardCuriosities.css";
 
 type CardCuriositiesProps = {
   icon: LucideIcon;

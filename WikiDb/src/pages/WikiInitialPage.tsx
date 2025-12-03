@@ -5,12 +5,12 @@ import {
   Users,
   Tv,
   Zap,
-  Shield,
+  Shield, 
   BookOpen
 } from "lucide-react";
-import "./WikiInitialPage.css";
-import { CardCuriosities } from "./Components/CardCuriosities";
-import { CardPerson } from "./Components/CardPerson";
+import "../styles/WikiInitialPage.css";
+import { CardCuriosities } from "../components/CardCuriosities";
+import { CardPerson } from "../components/CardPerson";
 
 function WikiInitialPage() {
   return (
