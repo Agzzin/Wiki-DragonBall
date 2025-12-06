@@ -5,8 +5,8 @@ import {
   Users,
   Tv,
   Zap,
-  Shield, 
-  BookOpen
+  Shield,
+  BookOpen,
 } from "lucide-react";
 import "../styles/WikiInitialPage.css";
 import { CardCuriosities } from "../components/CardCuriosities";
@@ -35,17 +35,17 @@ function WikiInitialPage() {
           </section>
 
           <section className="button-wiki">
-            <Link to="/caracters" style={{textDecoration:'none'}}>
+            <Link to="/caracters" style={{ textDecoration: "none" }}>
               <button className="b-exploration-wiki">
                 <Search color="#f16f10" size={20} />
                 <p className="p-exploration-wiki">Explorar Wiki</p>
               </button>
             </Link>
-            <button className="b-exploration-sagas">
-              <Link to='/sagas' style={{textDecoration:'none'}}>
-              <p className="p-exploration-sagas">Ver sagas</p>
-              </Link>
-            </button>
+            <Link to="/sagas" style={{ textDecoration: "none" }}>
+              <button className="b-exploration-sagas">
+                <p className="p-exploration-sagas">Ver sagas</p>
+              </button>
+            </Link>
           </section>
         </section>
       </header>
@@ -60,6 +60,7 @@ function WikiInitialPage() {
             </p>
             <section className="cards-curisioties">
               <CardCuriosities
+                link={{ to: "caracters" }}
                 icon={Users}
                 backgroundColor="#F05B1B"
                 items={6}
@@ -68,6 +69,7 @@ function WikiInitialPage() {
                 chevron={ChevronRight}
               />
               <CardCuriosities
+                link={{ to: "/sagas" }}
                 icon={Tv}
                 backgroundColor="#436AEF"
                 items={6}
@@ -76,6 +78,7 @@ function WikiInitialPage() {
                 chevron={ChevronRight}
               />
               <CardCuriosities
+                link={{ to: "/techniques" }}
                 icon={Zap}
                 backgroundColor="#EA9B09"
                 items={6}
@@ -112,7 +115,11 @@ function WikiInitialPage() {
               image="https://uploads.alternativanerd.com.br/wp-content/uploads/2018/03/AN_Goku-Intinto-Superior.jpg"
               name="Goku"
               firstAppearance="Dragon Ball (1986)"
-              transform={["Super Saiyajin", "Super Saiyajin Blue", "Ultra Instinto"]}
+              transform={[
+                "Super Saiyajin",
+                "Super Saiyajin Blue",
+                "Ultra Instinto",
+              ]}
               icon={Shield}
             />
             <CardPerson
@@ -138,11 +145,13 @@ function WikiInitialPage() {
       <footer>
         <section className="footer-wiki">
           <section className="box-icon-footer">
-            <BookOpen color="#fff" size={20}/>
+            <BookOpen color="#fff" size={20} />
           </section>
           <h1 className="h1-wiki">Dragon Ball Wiki</h1>
         </section>
-        <p className="p-wiki">A enciclopédia definitiva do universo Dragon Ball</p>
+        <p className="p-wiki">
+          A enciclopédia definitiva do universo Dragon Ball
+        </p>
       </footer>
     </section>
   );

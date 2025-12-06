@@ -9,7 +9,7 @@ export const ROUTES = {
     CARACTERS: '/caracters',
     CARACTER_DETAIL: '/caracter/details',
     SAGAS: '/sagas',
-    TECHNIQUES: '/tecnicas'
+    TECHNIQUES: '/techniques'
 }
 
 export const routeConfig = [

@@ -283,7 +283,6 @@
       font-size: 0.875rem;
     }
 
-    /* MEDIA QUERIES */
     @media (max-width: 768px) {
       .saga-card {
         flex-direction: column;

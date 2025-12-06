@@ -1,3 +1,7 @@
+.card-link{
+  text-decoration: none;
+}
+
 .box {
   width: 25%;
   height: 45vh;
