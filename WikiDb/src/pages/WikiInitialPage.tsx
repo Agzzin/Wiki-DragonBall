@@ -42,7 +42,9 @@ function WikiInitialPage() {
               </button>
             </Link>
             <button className="b-exploration-sagas">
+              <Link to='/sagas' style={{textDecoration:'none'}}>
               <p className="p-exploration-sagas">Ver sagas</p>
+              </Link>
             </button>
           </section>
         </section>
