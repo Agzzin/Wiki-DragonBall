@@ -11,6 +11,7 @@ import {
 import "../styles/WikiInitialPage.css";
 import { CardCuriosities } from "../components/CardCuriosities";
 import { CardPerson } from "../components/CardPerson";
+import { Link } from "react-router-dom";
 
 function WikiInitialPage() {
   return (
@@ -34,10 +35,12 @@ function WikiInitialPage() {
           </section>
 
           <section className="button-wiki">
-            <button className="b-exploration-wiki">
-              <Search color="#f16f10" size={20} />
-              <p className="p-exploration-wiki">Explorar Wiki</p>
-            </button>
+            <Link to="/caracters" style={{textDecoration:'none'}}>
+              <button className="b-exploration-wiki">
+                <Search color="#f16f10" size={20} />
+                <p className="p-exploration-wiki">Explorar Wiki</p>
+              </button>
+            </Link>
             <button className="b-exploration-sagas">
               <p className="p-exploration-sagas">Ver sagas</p>
             </button>
