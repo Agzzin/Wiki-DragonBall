@@ -3,13 +3,15 @@ import CaracterPage from '../pages/CaractersPage'
 import CaracterDetailsPage from '../pages/CaracterDetailsPage'
 import SagasPage from '../pages/SagasPage'
 import TechniquesPage from '../pages/Techniques'
+import CompareCharacters from '../pages/CompareCaracterPage'
 
 export const ROUTES = {
     HOME: '/',
     CARACTERS: '/caracters',
     CARACTER_DETAIL: '/caracter/details',
     SAGAS: '/sagas',
-    TECHNIQUES: '/techniques'
+    TECHNIQUES: '/techniques',
+    COMPARE_CHARACTERS: '/compare-characters'
 }
 
 export const routeConfig = [
@@ -17,6 +19,6 @@ export const routeConfig = [
     {path: ROUTES.CARACTERS, element: <CaracterPage/>},
     {path: ROUTES.CARACTER_DETAIL, element: <CaracterDetailsPage/>},
     {path: ROUTES.SAGAS, element: <SagasPage/>},
-    {path: ROUTES.TECHNIQUES, element: <TechniquesPage/>}
-    
+    {path: ROUTES.TECHNIQUES, element: <TechniquesPage/>},
+    {path: ROUTES.COMPARE_CHARACTERS, element: <CompareCharacters/>}
 ]
