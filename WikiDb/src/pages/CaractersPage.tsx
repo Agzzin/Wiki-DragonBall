@@ -31,7 +31,7 @@ const affiliations = ["Todas", "Guerreiros Z", "Vilões", "Neutros"];
 export default function CaracterPage() {
   return (
     <section className="container">
-      <Header title="Kansu" icon={Users}/>
+      <Header title="Personagens" icon={Users} colorHeaderIcon="#fb923c71" colorIcon="#FB923C"/>
 
       <main className="main">
         <section className="filters-section">

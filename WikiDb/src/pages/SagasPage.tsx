@@ -19,7 +19,7 @@ import '../../src/styles/SagasPage.css'
 export default function SagasPage() {
     return(
         <section className="container">
-            <Header title="Sagas" icon={Tv}/>
+            <Header title="Sagas" icon={Tv} colorHeaderIcon="#60a5fa89" colorIcon="#60A5FA"/>
 
          <main className="main">
           <section className="filters-section">

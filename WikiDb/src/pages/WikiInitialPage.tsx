@@ -7,6 +7,9 @@ import {
   Zap,
   Shield,
   BookOpen,
+  Swords,
+  Brain,
+  Heart,
 } from "lucide-react";
 import "../styles/WikiInitialPage.css";
 import { CardCuriosities } from "../components/CardCuriosities";
@@ -139,6 +142,35 @@ function WikiInitialPage() {
               icon={Shield}
             />
           </section>
+        </section>
+
+        <section className="special-resources-section">
+          <div className="special-resources-container">
+            <div className="special-resources-header">
+              <h2>Recursos Especiais</h2>
+              <p>Ferramentas interativas para você explorar ainda mais</p>
+            </div>
+
+            <div className="special-resources-grid">
+              <div className="resource-card purple">
+                <Swords className="resource-icon" />
+                <h3>Comparar</h3>
+                <p>Compare até 3 personagens lado a lado</p>
+              </div>
+
+              <div className="resource-card pink">
+                <Brain className="resource-icon" />
+                <h3>Quiz</h3>
+                <p>Teste seus conhecimentos sobre Dragon Ball</p>
+              </div>
+
+              <div className="resource-card red">
+                <Heart className="resource-icon" />
+                <h3>Favoritos</h3>
+                <p>Salve seus personagens e sagas favoritos</p>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
 
