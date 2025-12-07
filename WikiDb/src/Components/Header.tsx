@@ -1,5 +1,4 @@
-    import { ChevronLeft, Search } from "lucide-react";
-    import { Link } from "react-router-dom";
+    import { Search } from "lucide-react";
     import "../../src/ComponentStyles/Header.css";
     import type { LucideIcon } from "lucide-react";
 
@@ -13,12 +12,6 @@
     export default function Header({ title, icon: Icon, colorHeaderIcon, colorIcon }: HeaderProps) {
       return (
         <header className="c-header">
-          <button className="back-button">
-            <ChevronLeft size={24} />
-            <Link to="/" style={{ textDecoration: "none", color: "#94a3b8" }}>
-              <p>Voltar</p>
-            </Link>
-          </button>
 
           <section className="header-content">
             <section className="header-icon" style={{backgroundColor: colorHeaderIcon}}>{<Icon size={34} color={colorIcon}/>}</section>

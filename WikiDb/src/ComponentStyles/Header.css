@@ -1,23 +1,11 @@
 .c-header {
-      padding: 1.5rem 1rem 1rem 4rem;
+      padding: 7.5rem 1rem 1rem 4rem;
       border-bottom: 1px solid rgba(71, 85, 105, 0.2);
     }
 
-    .back-button {
-      background: transparent;
-      border: none;
-      color: #94a3b8;
-      display: flex;
-      align-items: center;
-      gap: 0.25rem;
-      font-size: 0.95rem;
-      cursor: pointer;
-      padding: 0;
-      margin-bottom: 2rem;
-    }
+    
 
-    .back-button:hover, 
-    p:hover {
+    .back-button:hover {
       color: #fff;
     }
 
