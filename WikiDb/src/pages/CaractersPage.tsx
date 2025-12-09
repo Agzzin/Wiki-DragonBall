@@ -1,6 +1,7 @@
 import { Users } from "lucide-react";
 import "../../src/styles/CaracterPage.css";
 import Header from "../components/Header";
+import Menu from "../components/Menu";
 
 const characters = [
   { id: 1, name: "Goku", race: "Saiyajin", color: "#ff4444", initial: "G" },
@@ -30,7 +31,8 @@ const affiliations = ["Todas", "Guerreiros Z", "Vilões", "Neutros"];
 
 export default function CaracterPage() {
   return (
-    <section className="container">
+    <section className="container-caracter">
+      <Menu/>
       <Header title="Personagens" icon={Users} colorHeaderIcon="#fb923c71" colorIcon="#FB923C"/>
 
       <main className="main">

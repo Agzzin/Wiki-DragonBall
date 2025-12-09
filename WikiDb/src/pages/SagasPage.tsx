@@ -25,7 +25,7 @@ const series = [
 
 export default function SagasPage() {
   return (
-    <section className="container">
+    <section className="container-sagas">
       <Menu/>
       <Header
         title="Sagas"

@@ -5,6 +5,7 @@
     }
 
     .container {
+      padding-top: 6rem;
       background: linear-gradient(180deg, #0f1821 0%, #0a0f16 100%);
       min-height: 100vh;
       color: #fff;
@@ -13,13 +14,12 @@
       flex-direction: column;
     }
 
-    /* MAIN */
     .main {
       flex: 1;
       padding: 1rem;
     }
 
-    /* FILTERS SECTION */
+
     .filters-section {
       margin-bottom: 2rem;
       padding-bottom: 1.5rem;
@@ -67,7 +67,6 @@
       background: #f97316;
     }
 
-    /* TECHNIQUES SECTION */
     .techniques-section {
       margin-bottom: 2rem;
     }
@@ -174,7 +173,6 @@
       font-weight: 500;
     }
 
-    /* FOOTER */
     .footer {
       padding: 2rem 1rem;
       text-align: center;
@@ -186,7 +184,6 @@
       font-size: 0.875rem;
     }
 
-    /* MEDIA QUERIES */
     @media (min-width: 768px) {
       .header {
         padding: 2rem;

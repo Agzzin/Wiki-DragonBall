@@ -4,7 +4,8 @@
       box-sizing: border-box;
     }
 
-    .container {
+    .container-sagas {
+      padding-top: 6rem;
       background: linear-gradient(180deg, #0f1821 0%, #0a0f16 100%);
       min-height: 100vh;
       color: #fff;

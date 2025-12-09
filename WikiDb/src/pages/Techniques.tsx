@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import { Zap } from "lucide-react";
 import "../../src/styles/Techniques.css";
+import Menu from '../components/Menu'
 
 const techniques = [
   {
@@ -37,6 +38,7 @@ const types = [
 function TechniquesPage() {
   return (
     <section className="container">
+      <Menu/>
       <Header title="Tecnicas" icon={Zap} colorHeaderIcon="#facc1569" colorIcon="#FACC15"/>
 
       <main className="main">

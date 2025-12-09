@@ -68,6 +68,7 @@
   justify-content: center;
   background-color: #fff;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .b-exploration-sagas {
