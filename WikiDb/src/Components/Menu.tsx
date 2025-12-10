@@ -1,13 +1,16 @@
 import { Home, Users, Tv, Zap, Scale, HelpCircle, Heart, BookOpen } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "../../src/ComponentStyles/Menu.css";
 
 function DragonBallMenu() {
+  const location = useLocation();
+
+  const isActive = (path: string) => location.pathname === path;
+
   return (
     <nav className="menu-nav">
       <section className="menu-container">
         <section className="menu-content">
-          {/* Logo */}
           <section className="menu-logo">
             <section className="logo-icon">
               <BookOpen className="icon" />
@@ -16,51 +19,39 @@ function DragonBallMenu() {
           </section>
 
           <section className="menu-items">
-            <Link to={''} className="menu-item">
-           
+            <Link to={'/'} className={`menu-item  ${isActive('/') ? 'active' : ''}`}>
               <Home className="menu-icon" />
               <span className="menu-text">Início</span>
-          
             </Link>
 
-            <Link to={''} className="menu-item">
+            <Link to={'/caracters'} className={`menu-item  ${isActive('/caracters') ? 'active' : ''}`}>
               <Users className="menu-icon" />
               <span className="menu-text">Personagens</span>
-            
             </Link>
 
-            <Link to={''} className="menu-item">
-           
+            <Link to={'/sagas'} className={`menu-item  ${isActive('/sagas') ? 'active' : ''}`}>
               <Tv className="menu-icon" />
               <span className="menu-text">Sagas</span>
-  
             </Link>
 
-            <Link to={''} className="menu-item">
-            
+            <Link to={'/techniques'} className={`menu-item  ${isActive('/techniques') ? 'active' : ''}`}>
               <Zap className="menu-icon" />
               <span className="menu-text">Técnicas</span>
-            
             </Link>
 
-            <Link to={''} className="menu-item">
+            <Link to={'/compare-caracters'} className={`menu-item  ${isActive('/compare-caracters') ? 'active' : ''}`}>
               <Scale className="menu-icon" />
               <span className="menu-text">Comparar</span>
-          
             </Link>
 
-            <Link to={''} className="menu-item">
-           
+            <Link to={'/quiz'} className={`menu-item  ${isActive('/quiz') ? 'active' : ''}`}>
               <HelpCircle className="menu-icon" />
               <span className="menu-text">Quiz</span>
-        
             </Link>
 
-            <Link to={''} className="menu-item">
-              
+            <Link to={'/favorites'} className={`menu-item  ${isActive('/favorites') ? 'active' : ''}`}>
               <Heart className="menu-icon" />
               <span className="menu-text">Favoritos</span>
-           
             </Link>
           </section>
         </section>

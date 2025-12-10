@@ -37,7 +37,7 @@ const types = [
 
 function TechniquesPage() {
   return (
-    <section className="container">
+    <section className="container-techniques">
       <Menu/>
       <Header title="Tecnicas" icon={Zap} colorHeaderIcon="#facc1569" colorIcon="#FACC15"/>
 

@@ -13,7 +13,7 @@ export const ROUTES = {
     CARACTER_DETAIL: '/caracter/details',
     SAGAS: '/sagas',
     TECHNIQUES: '/techniques',
-    COMPARE_CHARACTERS: '/compare-characters',
+    COMPARE_CHARACTERS: '/compare-caracters',
     QUIZ: '/quiz',
     FAVORITE: '/favorites'
 

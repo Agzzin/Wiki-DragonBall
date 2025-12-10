@@ -1,4 +1,3 @@
-// CompareCharacters.jsx
 import { Search, Swords } from "lucide-react";
 import "../../src/styles/CompareCaracterPage.css";
 import Menu from '../components/Menu'
