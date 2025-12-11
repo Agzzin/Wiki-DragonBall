@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import { Tv, Play } from "lucide-react";
 import "../../src/styles/SagasPage.css";
 import Menu from '../components/Menu'
+import Footer from "../components/Footer";
 
 const sagas = [
   {
@@ -87,9 +88,7 @@ export default function SagasPage() {
         </section>
       </main>
 
-      <footer className="footer">
-        <p className="footer-text">© 2025 Dragon Ball Sagas Database</p>
-      </footer>
+      <Footer/>
     </section>
   );
 }

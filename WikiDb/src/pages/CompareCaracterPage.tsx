@@ -2,6 +2,7 @@ import { Search, Swords } from "lucide-react";
 import "../../src/styles/CompareCaracterPage.css";
 import Menu from '../components/Menu'
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export default function CompareCharacters() {
   return (
@@ -69,6 +70,10 @@ export default function CompareCharacters() {
           Escolha os personagens acima para começar a comparação
         </p>
       </section>
+
+      <Footer/>
     </section>
+
+    
   );
 }

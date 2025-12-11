@@ -131,17 +131,6 @@
       margin: 0;
     }
 
-    .footer {
-      padding: 2rem 1rem;
-      text-align: center;
-      border-top: 1px solid rgba(71, 85, 105, 0.2);
-    }
-
-    .footer-text {
-      color: #64748b;
-      font-size: 0.875rem;
-    }
-
     @media (min-width: 480px) {
       .characters-grid {
         grid-template-columns: repeat(2, 1fr);

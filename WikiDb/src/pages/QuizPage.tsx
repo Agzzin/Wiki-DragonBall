@@ -2,6 +2,7 @@ import { Brain } from "lucide-react";
 import "../../src/styles/QuizPage.css";
 import Menu from '../components/Menu';
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export default function QuizPage() {
   return (
@@ -29,7 +30,7 @@ export default function QuizPage() {
           <h2 className="quiz-title">Pronto para o desafio?</h2>
           <p className="quiz-description">
             Responda 10 perguntas sobre personagens, sagas e técnicas do universo Dragon Ball. Boa sorte!
-          </p>
+          </p>  
 
           <section className="quiz-info-grid">
             <section className="quiz-info-card">
@@ -53,6 +54,8 @@ export default function QuizPage() {
           </button>
         </section>
       </section>
+
+      <Footer/>
     </section>
   );
 }

@@ -272,17 +272,7 @@
       font-weight: 700;
     }
 
-    /* FOOTER */
-    .footer {
-      padding: 2rem 1rem;
-      text-align: center;
-      border-top: 1px solid rgba(71, 85, 105, 0.15);
-    }
-
-    .footer-text {
-      color: #64748b;
-      font-size: 0.875rem;
-    }
+   
 
     @media (max-width: 768px) {
       .saga-card {

@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import { Zap } from "lucide-react";
 import "../../src/styles/Techniques.css";
 import Menu from '../components/Menu'
+import Footer from "../components/Footer";
 
 const techniques = [
   {
@@ -89,9 +90,7 @@ function TechniquesPage() {
         </section>
       </main>
 
-      <footer className="footer">
-        <p className="footer-text">© 2025 Dragon Ball Techniques Database</p>
-      </footer>
+      <Footer/>
     </section>
   );
 }

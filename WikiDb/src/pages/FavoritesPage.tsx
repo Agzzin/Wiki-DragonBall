@@ -1,6 +1,7 @@
 import { Heart } from 'lucide-react';
 import '../styles/FavoritePage.css';
 import Menu from '../components/Menu'
+import Footer from '../components/Footer';
 
 export default function FavoritosPage() {
   return (
@@ -39,6 +40,8 @@ export default function FavoritosPage() {
           </button>
         </div>
       </div>
+
+      <Footer/>
     </div>
   );
 }

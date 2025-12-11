@@ -2,6 +2,7 @@ import { Users } from "lucide-react";
 import "../../src/styles/CaracterPage.css";
 import Header from "../components/Header";
 import Menu from "../components/Menu";
+import Footer from "../components/Footer";
 
 const characters = [
   { id: 1, name: "Goku", race: "Saiyajin", color: "#ff4444", initial: "G" },
@@ -81,9 +82,7 @@ export default function CaracterPage() {
         </section>
       </main>
 
-      <footer className="footer">
-        <p className="footer-text">© 2025 Dragon Ball Characters Database</p>
-      </footer>
+      <Footer/>
     </section>
   );
 }

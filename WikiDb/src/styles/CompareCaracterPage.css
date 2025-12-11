@@ -1,7 +1,7 @@
 .compare-page {
   min-height: 100vh;
   background: linear-gradient(180deg, #0a0e27 0%, #1a1f3a 100%);
-  padding: 7rem 3rem 3rem 3rem;
+  padding-top: 7rem;
 }
 
 .compare-grid {
