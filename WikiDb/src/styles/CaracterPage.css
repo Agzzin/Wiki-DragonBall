@@ -130,7 +130,7 @@
       font-weight: 700;
       margin: 0;
     }
-
+    
     @media (min-width: 480px) {
       .characters-grid {
         grid-template-columns: repeat(2, 1fr);

@@ -17,6 +17,7 @@ import { CardPerson } from "../components/CardPerson";
 import { Link } from "react-router-dom";
 
 function WikiInitialPage() {
+
   return (
     <section className="container">
       <header>
