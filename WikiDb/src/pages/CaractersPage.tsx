@@ -1,10 +1,11 @@
-import { Users } from "lucide-react";
+import { Shield, Users } from "lucide-react";
 import "../../src/styles/CaracterPage.css";
 import Header from "../components/Header";
 import Menu from "../components/Menu";
 import Footer from "../components/Footer";
 import { useEffect, useState } from "react";
 import { Loading } from "../StyledComponents/loading";
+import { CardPerson } from "../components/CardPerson";
 
 interface Character {
   id: number;
@@ -13,6 +14,7 @@ interface Character {
   affiliation: string;
   image: string;
   description: string;
+  ki: string;
 }
 
 export default function CaracterPage() {
@@ -21,29 +23,27 @@ export default function CaracterPage() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-  const fetchCharacters = async () => {
-    setLoading(true);
-    
-    setTimeout(async () => {
-      try {
-        const response = await fetch(
-          "https://dragonball-api.com/api/characters?limit=9999"
-        );
-        if (!response.ok) {
-          throw new Error("Erro ao carregar personagens");
+    const fetchCharacters = async () => {
+      setLoading(true);
+      setTimeout(async () => {
+        try {
+          const response = await fetch(
+            "https://dragonball-api.com/api/characters?limit=9999"
+          );
+          if (!response.ok) {
+            throw new Error("Erro ao carregar personagens");
+          }
+          const data = await response.json();
+          setCharacters(data.items);
+        } catch (error) {
+          setError(error instanceof Error ? error.message : "Erro desconhecido");
+        } finally {
+          setLoading(false);
         }
-        const data = await response.json();
-        setCharacters(data.items);
-      } catch (err) {
-        setError(err instanceof Error ? err.message : "Erro desconhecido");
-      } finally {
-        setLoading(false);
-      }
-    }, 5000);
-  };
-  fetchCharacters();
-}, []);
-
+      }, 5000);
+    };
+    fetchCharacters();
+  }, []);
 
   return (
     <section className="container-caracter">
@@ -58,20 +58,26 @@ export default function CaracterPage() {
       <main className="main">
         <section className="filters-section">
           <section className="filter-group">
-            <label className="filter-label">Raça</label>
             <section className="filter-pills">
-              {loading ? <Loading /> : <div>carregado</div>}
+              {loading ? (
+                <Loading />
+              ) : (
+                <section className="characters-grid">
+                  {characters.map((character) => (
+                    <CardPerson
+                      key={character.id}
+                      race={character.race}
+                      image={character.image}
+                      name={character.name}
+                      firstAppearance={character.affiliation}
+                      icon={Shield}
+                      transform={character.ki}
+                    />
+                  ))}
+                </section>
+              )}
             </section>
           </section>
-
-          <section className="filter-group">
-            <label className="filter-label">Afiliação</label>
-            <section className="filter-pills"></section>
-          </section>
-        </section>
-
-        <section className="characters-section">
-          <section className="characters-grid"></section>
         </section>
       </main>
 
