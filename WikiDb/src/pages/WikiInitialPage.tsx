@@ -19,7 +19,7 @@ function WikiInitialPage() {
   return (
     <section className="container mx-auto px-4">
       <header>
-        <section className="bg-gradient-to-r from-orange-500 via-orange-600 to-red-600 pt-8! flex flex-col items-center pb-8!">
+        <section className="bg-linear-to-r from-orange-500 via-orange-600 to-red-600 pt-8! flex flex-col items-center pb-8!">
           <button className="bg-white/17 border-none text-white p-2.5! rounded-full flex items-center hover:bg-white/25 transition-colors mt-8 gap-2.5">
             <Sparkles color="#fff" size={20} />
             <p className="text-center text-white text-xl">
@@ -71,7 +71,7 @@ function WikiInitialPage() {
               <CardCuriosities
                 link={{ to: "caracters" }}
                 icon={Users}
-                backgroundColor="bg-gradient-to-br from-[#FF6A2A] to-[#E63A1F]"
+                backgroundColor="bg-linear-to-br from-[#FF6A2A] to-[#E63A1F]"
                 items={6}
                 paragraph="Explore todos os guerreiros, vilões e aliados do universo Dragon Ball"
                 title="Personagens"
@@ -80,7 +80,7 @@ function WikiInitialPage() {
               <CardCuriosities
                 link={{ to: "/sagas" }}
                 icon={Tv}
-                backgroundColor="bg-gradient-to-br from-[#4C7BFF] to-[#3F5EDB]"
+                backgroundColor="bg-linear-to-br from-[#4C7BFF] to-[#3F5EDB]"
                 items={6}
                 paragraph="Reviva as aventuras épicas desde Dragon Ball até Super"
                 title="Sagas"
@@ -89,7 +89,7 @@ function WikiInitialPage() {
               <CardCuriosities
                 link={{ to: "/techniques" }}
                 icon={Zap}
-                backgroundColor="bg-gradient-to-br from-[#FFC21A] to-[#F28A00]"
+                backgroundColor="bg-linear-to-br from-[#FFC21A] to-[#F28A00]"
                 items={6}
                 paragraph="Kamehameha, Genki Dama e todas as técnicas lendárias"
                 title="Técnicas"
@@ -162,35 +162,35 @@ function WikiInitialPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 pb-32! place-items-center">
-                <div className="text-left group relative overflow-hidden cursor-pointer rounded-3xl px-15! py-23! bg-gradient-to-br from-purple-600 to-purple-400 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
-                  <Swords className="w-15! h-15! mb-6 text-white stroke-[ 1.8]" />
-                  <h3 className="text-2xl font-semibold text-white mb-2">
-                    Comparar
-                  </h3>
-                  <p className="text-xl text-white/80 leading-normal w-72!">
-                    Compare até 3 personagens lado a lado
-                  </p>
-                </div>
+              <div className="text-left group relative overflow-hidden cursor-pointer rounded-3xl px-15! py-23! bg-linear-to-br from-purple-600 to-purple-400 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+                <Swords className="w-15! h-15! mb-6 text-white stroke-[1.8]" />
+                <h3 className="text-2xl font-semibold text-white mb-2">
+                  Comparar
+                </h3>
+                <p className="text-xl text-white/80 leading-normal w-72!">
+                  Compare até 3 personagens lado a lado
+                </p>
+              </div>
 
-                <div className="group relative overflow-hidden cursor-pointer rounded-3xl px-15! py-23! bg-gradient-to-br from-pink-500 to-pink-300 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] text-left">
-                  <Brain className="w-15 h-15 mb-6 text-white stroke-[1.8]" />
-                  <h3 className="text-2xl font-semibold text-white mb-2">
-                    Quiz
-                  </h3>
-                  <p className="text-xl text-white/80 leading-normal w-72!">
-                    Teste seus conhecimentos sobre Dragon Ball
-                  </p>
-                </div>
+              <div className="group relative overflow-hidden cursor-pointer rounded-3xl px-15! py-23! bg-linear-to-br from-pink-500 to-pink-300 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] text-left">
+                <Brain className="w-15 h-15 mb-6 text-white stroke-[1.8]" />
+                <h3 className="text-2xl font-semibold text-white mb-2">
+                  Quiz
+                </h3>
+                <p className="text-xl text-white/80 leading-normal w-72!">
+                  Teste seus conhecimentos sobre Dragon Ball
+                </p>
+              </div>
 
-                <div className="text-left group relative overflow-hidden cursor-pointer rounded-3xl px-15! py-23! bg-gradient-to-br from-red-500 to-red-400 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
-                  <Heart className="w-15! h-15! mb-6 text-white stroke-[1.8]" />
-                  <h3 className="text-2xl font-semibold text-white mb-2">
-                    Favoritos
-                  </h3>
-                  <p className="text-xl text-white/80 leading-normal w-72!">
-                    Salve seus personagens e sagas favoritos
-                  </p>
-                </div>
+              <div className="text-left group relative overflow-hidden cursor-pointer rounded-3xl px-15! py-23! bg-linear-to-br from-red-500 to-red-400 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+                <Heart className="w-15! h-15! mb-6 text-white stroke-[1.8]" />
+                <h3 className="text-2xl font-semibold text-white mb-2">
+                  Favoritos
+                </h3>
+                <p className="text-xl text-white/80 leading-normal w-72!">
+                  Salve seus personagens e sagas favoritos
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -211,4 +211,5 @@ function WikiInitialPage() {
     </section>
   );
 }
+
 export default WikiInitialPage;
