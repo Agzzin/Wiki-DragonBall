@@ -1,5 +1,4 @@
 import type { LucideIcon } from "lucide-react";
-import "../../src/ComponentStyles/CardCuriosities.css";
 import { Link } from "react-router-dom";
 import type { LinkProps } from "react-router-dom";
 
@@ -8,7 +7,7 @@ type CardCuriositiesProps = {
   title: string;
   paragraph: string;
   items: number;
-  backgroundColor: string;
+  backgroundColor: string; 
   chevron: LucideIcon;
   link: LinkProps;
 };
@@ -23,23 +22,30 @@ export function CardCuriosities({
   link,
 }: CardCuriositiesProps) {
   return (
-      <section style={{ backgroundColor }} className="box">
-        <Link {...link} className="card-link">
-        <section className="box-padding">
-          <section className="box-icon">
-            <Icon size={30} color="#fff" className="icon-box" />
-          </section>
-          <h3 className="box-title">{title}</h3>
-          <p className="box-p">{paragraph}</p>
-          <section className="box-itens">
-            <span className="box-span">{items} itens</span>
-            <section className="box-chevron">
-              <Chevron size={25} color="#fff" className="icon-chevron" />
-            </section>
-          </section>
-        </section>
-        </Link>
-      </section>
-   
+    <section
+      className={`h-85! rounded-3xl text-left transition-all duration-300 hover:shadow-lg hover:-translate-y-2 ${backgroundColor}`}
+    >
+      <Link {...link} className="no-underline block h-full">
+        <div className="p-6! h-full flex flex-col justify-between">
+          <div className="bg-white/30 rounded-xl w-16 h-16 flex items-center justify-center mb-4">
+            <Icon size={30} color="#fff" />
+          </div>
+
+          <h3 className="text-white text-lg mb-2">{title}</h3>
+
+          <p className="text-white/50 text-base mb-4 max-w-xs">
+            {paragraph}
+          </p>
+
+          <div className="flex items-center justify-between max-w-xs">
+            <span className="text-white/50 text-sm">{items} itens</span>
+
+            <div className="bg-white/30 rounded-full w-12 h-12 flex items-center justify-center">
+              <Chevron size={25} color="#fff" />
+            </div>
+          </div>
+        </div>
+      </Link>
+    </section>
   );
 }

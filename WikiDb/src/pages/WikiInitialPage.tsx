@@ -17,39 +17,40 @@ import { Link } from "react-router-dom";
 
 function WikiInitialPage() {
   return (
-    <section className="container">
+    <section className="container mx-auto px-4">
       <header>
-        <section className="bg-[linear-gradient(160deg,#ff8a00_0%,#ff6a00_40%,#ff3c00_100%)] pt-8 m-auto flex flex-col items-center pb-8">
-          <button className="bg-[rgba(250,250,250,0.168)] border-none text-white p-2.5! rounded-full flex items-center hover:bg-[rgba(250,250,250,0.25)] transition-colors mt-8! gap-2.5">
+        <section className="bg-gradient-to-r from-orange-500 via-orange-600 to-red-600 pt-8! flex flex-col items-center pb-8!">
+          <button className="bg-white/17 border-none text-white p-2.5! rounded-full flex items-center hover:bg-white/25 transition-colors mt-8 gap-2.5">
             <Sparkles color="#fff" size={20} />
-            <p className="text-center text-white text-1xl">
+            <p className="text-center text-white text-xl">
               Enciclopédia Definitiva
             </p>
           </button>
 
-          <section className="pb-12">
-            <h1 className="text-center text-white text-6xl pb-4!">
+          <section className="pb-12!">
+            <h1 className="text-center text-white text-6xl! pb-4!">
               Dragon Ball
             </h1>
-            <h1 className="text-center text-[#fde047] text-6xl mb-4!">Wiki</h1>
-            <p className="text-center text-[1.2rem] text-[#FADDCA] mb-8!">
+            <h1 className="text-center text-yellow-200 text-6xl mb-4">Wiki</h1>
+            <p className="text-center text-lg text-orange-100 mb-8">
               Explore o universo de Dragon Ball. Personagens, sagas, técnicas e
-              muito
               <br />
               mais em um só lugar.
             </p>
           </section>
 
-          <section className="flex items-center justify-center gap-12 pb-16!">
+          <section className="flex flex-col md:flex-row items-center justify-center gap-12! pb-16!">
             <Link to="/caracters" style={{ textDecoration: "none" }}>
-              <button className="px-[2.3rem]! py-4! flex items-center justify-center bg-white rounded-[10px] cursor-pointer border-none gap-2.5">
+              <button className="px-9! py-4! flex items-center justify-center bg-white rounded-lg cursor-pointer border-none gap-2.5">
                 <Search color="#f16f10" size={20} />
-                <p className="text-[#EA6216] text-1xl font-bold">Explorar Wiki</p>
+                <p className="text-orange-600 text-xl font-bold">
+                  Explorar Wiki
+                </p>
               </button>
             </Link>
             <Link to="/sagas" style={{ textDecoration: "none" }}>
-              <button className="group py-4! px-[2.3rem]! bg-black rounded-[10px] cursor-pointer border-0 transition-all duration-200 ease-in-out hover:bg-[#f16f10] hover:border hover:border-[#ffffff70]">
-                <p className=" text-white text-base font-bold transition-colors duration-200 ease-in-out group-hover:text-black">
+              <button className="group py-4! px-9! bg-black rounded-lg cursor-pointer border-0 transition-all duration-200 ease-in-out hover:bg-orange-600 hover:border hover:border-white/40">
+                <p className="text-white text-base font-bold transition-colors duration-200 ease-in-out group-hover:text-black">
                   Ver sagas
                 </p>
               </button>
@@ -59,18 +60,18 @@ function WikiInitialPage() {
       </header>
 
       <main>
-        <section className="pt-12 bg-black mx-auto mb-8">
-          <section className="text-center pt-16!">
+        <section className="pt-12! bg-black mx-auto pb-8!">
+          <section className="text-center pt-16">
             <h1 className="text-center text-white text-5xl">Explore a Wiki</h1>
             <p className="text-white mb-16! mt-10!">
               Navegue por categorias e descubra tudo sobre o universo Dragon
               Ball
             </p>
-            <section className="pt-12 flex items-center justify-center gap-[4%] transition-transform duration-300 ease-in-out cursor-pointer pb-30! ">
+            <section className="pt-12 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 transition-transform duration-300 ease-in-out cursor-pointer pb-30">
               <CardCuriosities
                 link={{ to: "caracters" }}
                 icon={Users}
-                backgroundColor="#F05B1B"
+                backgroundColor="bg-gradient-to-br from-[#FF6A2A] to-[#E63A1F]"
                 items={6}
                 paragraph="Explore todos os guerreiros, vilões e aliados do universo Dragon Ball"
                 title="Personagens"
@@ -79,7 +80,7 @@ function WikiInitialPage() {
               <CardCuriosities
                 link={{ to: "/sagas" }}
                 icon={Tv}
-                backgroundColor="#436AEF"
+                backgroundColor="bg-gradient-to-br from-[#4C7BFF] to-[#3F5EDB]"
                 items={6}
                 paragraph="Reviva as aventuras épicas desde Dragon Ball até Super"
                 title="Sagas"
@@ -88,7 +89,7 @@ function WikiInitialPage() {
               <CardCuriosities
                 link={{ to: "/techniques" }}
                 icon={Zap}
-                backgroundColor="#EA9B09"
+                backgroundColor="bg-gradient-to-br from-[#FFC21A] to-[#F28A00]"
                 items={6}
                 paragraph="Kamehameha, Genki Dama e todas as técnicas lendárias"
                 title="Técnicas"
@@ -98,23 +99,21 @@ function WikiInitialPage() {
           </section>
         </section>
 
-        <section className="bg-black pt-24 pr-20 pb-25!">
-          <section className="flex items-center justify-between pb-6 pl-16! pr-16!">
+        <section className="bg-black pl-20! pt-24! pr-20! pb-25!">
+          <section className="flex flex-col md:flex-row items-center justify-between pb-6 pl-16 pr-16">
             <h1 className="text-white text-4xl">Personagens em Destaque</h1>
             <button className="flex items-center justify-center border-0 bg-transparent">
-              <p className="text-[#ea9b09] text-base">Ver todos</p>
+              <p className="text-orange-400 text-base">Ver todos</p>
               <ChevronRight size={22} color="#EA9B09" />
             </button>
           </section>
-          <p className="text-[#ffffff85] text-base pb-12 pl-16! pr-16! pt-2!">
+          <p className="text-white/50 text-base pb-12! pt-4!">
             Conheça os guerreiros mais icônicos
           </p>
-          <section className="flex items-center justify-center gap-8 pt-16!">
+          <section className="flex flex-col md:flex-row items-center justify-center gap-8 pt-16">
             <CardPerson
               race="Sayajin"
-              image={
-                "https://i.pinimg.com/736x/a5/a7/f9/a5a7f9fad4ce2a546e053c95005e63b0.jpg"
-              }
+              image="https://i.pinimg.com/736x/a5/a7/f9/a5a7f9fad4ce2a546e053c95005e63b0.jpg"
               name="Broly"
               firstAppearance="Dragon Ball Z: O Poder Invencível (1993)"
               transform="Super Saiyajin Lendário"
@@ -134,7 +133,7 @@ function WikiInitialPage() {
             />
             <CardPerson
               race="Saiyajin"
-              image="https://wallpapers.com/images/hd/majin-vegeta-smile-5g4t1zilgzsodudn.jpg "
+              image="https://wallpapers.com/images/hd/majin-vegeta-smile-5g4t1zilgzsodudn.jpg"
               name="Vegeta"
               firstAppearance="Dragon Ball Z (1989)"
               transform={["Super Saiyajin", "Super Saiyajin Blue", "Ultra Ego"]}
@@ -151,71 +150,60 @@ function WikiInitialPage() {
           </section>
         </section>
 
-        <section className="py-20 px-5 bg-black">
-          <div className="max-w-1400px mx-auto! text-center ">
+        <section className="py-20! px-5! bg-black">
+          <div className="w-full mx-auto text-center">
             <div className="text-center mb-15">
-              <h2 className="text-[2.5rem] font-bold text-white mb-3">
+              <h2 className="text-4xl font-bold text-white mb-3">
                 Recursos Especiais
               </h2>
-              <p className="text-[1.1rem] text-slate-400 pb-8!">
+              <p className="text-lg text-slate-400 pb-8!">
                 Ferramentas interativas para você explorar ainda mais
               </p>
             </div>
 
-            <section className="flex items-center justify-center gap-16">
-              <div className="grid grid-cols-3 gap-10 pb-32!">
-                <div className=" text-left group relative overflow-hidden cursor-pointer rounded-3xl px-15! py-23! bg-linear-to-br from-purple-600 to-purple-400 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
-                  <Swords className="w-15 h-15 mb-6 text-white stroke-[1.8]" />
-
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 pb-32! place-items-center">
+                <div className="text-left group relative overflow-hidden cursor-pointer rounded-3xl px-15! py-23! bg-gradient-to-br from-purple-600 to-purple-400 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+                  <Swords className="w-15! h-15! mb-6 text-white stroke-[ 1.8]" />
                   <h3 className="text-2xl font-semibold text-white mb-2">
                     Comparar
                   </h3>
-
-                  <p className="text-1xl w-72 text-white/80 leading-normal">
+                  <p className="text-xl text-white/80 leading-normal w-72!">
                     Compare até 3 personagens lado a lado
                   </p>
                 </div>
 
-                <div className="group relative overflow-hidden cursor-pointer rounded-3xl px-15! py-23! bg-linear-to-br from-pink-500 to-pink-300 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] text-left">
+                <div className="group relative overflow-hidden cursor-pointer rounded-3xl px-15! py-23! bg-gradient-to-br from-pink-500 to-pink-300 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] text-left">
                   <Brain className="w-15 h-15 mb-6 text-white stroke-[1.8]" />
-
-                  <h3 className="text-2xl font-semibold text-white mb-2 text">
+                  <h3 className="text-2xl font-semibold text-white mb-2">
                     Quiz
                   </h3>
-
-                  <p className="text-1xl w-72 text-white/80 leading-normal">
+                  <p className="text-xl text-white/80 leading-normal w-72!">
                     Teste seus conhecimentos sobre Dragon Ball
                   </p>
                 </div>
 
-                <div className="text-left group relative overflow-hidden cursor-pointer rounded-3xl px-15! py-23! bg-linear-to-br from-red-500 to-red-400 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
-                  <Heart className="w-15 h-15 mb-6 text-white stroke-[1.8]" />
-
+                <div className="text-left group relative overflow-hidden cursor-pointer rounded-3xl px-15! py-23! bg-gradient-to-br from-red-500 to-red-400 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+                  <Heart className="w-15! h-15! mb-6 text-white stroke-[1.8]" />
                   <h3 className="text-2xl font-semibold text-white mb-2">
                     Favoritos
                   </h3>
-
-                  <p className="text-1xl text-white/80 leading-normal w-72">
+                  <p className="text-xl text-white/80 leading-normal w-72!">
                     Salve seus personagens e sagas favoritos
                   </p>
                 </div>
-              </div>
-            </section>
+            </div>
           </div>
         </section>
       </main>
 
       <footer className="bg-black border-t border-white/20 pt-8! pb-8!">
-        <div className="flex items-center justify-center gap-4 pt-8">
-          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#f66623]">
-           
-           <BookOpen color="#fff"/>
+        <div className="flex items-center justify-center gap-4 pt-8!">
+          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-orange-500">
+            <BookOpen color="#fff" />
           </div>
-
           <h1 className="text-white text-xl font-semibold">Dragon Ball Wiki</h1>
         </div>
-
-        <p className="py-12 text-center text-white/60">
+        <p className="py-12! text-center text-white/60">
           © {new Date().getFullYear()} Dragon Ball Wiki. Todos os direitos
           reservados.
         </p>
