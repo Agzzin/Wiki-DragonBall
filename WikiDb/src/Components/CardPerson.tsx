@@ -25,7 +25,7 @@ export function CardPerson({
         </p>
       </section>
 
-      <section className="w-full overflow-hidden rounded-b-xl bg-black/20 sm:aspect-video aspect-video">
+      <section className="w-full h-[35vh] overflow-hidden rounded-b-xl bg-black/20 sm:aspect-video aspect-video">
         {image && (
           <img
             src={image}
@@ -35,7 +35,7 @@ export function CardPerson({
         )}
       </section>
 
-      <section className="absolute top-29! left-3! right-3! flex items-center justify-between gap-3 px-4 sm:px-5 z-10">
+      <section className="absolute top-50! left-3! right-3! flex items-center justify-between gap-3 px-4 sm:px-5 z-10">
         <p className="text-white text-base sm:text-lg font-black leading-tight m-0 truncate">
           {name}
         </p>
