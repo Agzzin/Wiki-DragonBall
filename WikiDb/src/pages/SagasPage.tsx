@@ -2,6 +2,7 @@ import Header from "../Components/Header";
 import { Tv, Play } from "lucide-react";
 import Menu from '../Components/Menu'
 import Footer from "../Components/Footer";
+import { useEffect } from "react";
 
 const sagas = [
   {
@@ -24,6 +25,17 @@ const series = [
 ];
 
 export default function SagasPage() {
+
+  useEffect(() => {
+    const getSeries = async () =>{
+      const response = await fetch('https://superflixapi.run/lista?category=anime&type=tmdb&format=json&order=asc')
+      const dataJSON = response.json()
+
+      console.log(dataJSON)
+    }
+    getSeries()
+  })
+
   return (
     <section className="pt-24! min-h-screen bg-linear-to-b from-slate-900 via-slate-950 to-black text-white font-sans flex flex-col">
       <Menu />
@@ -38,7 +50,7 @@ export default function SagasPage() {
 
       <main className="flex-1 px-4! py-8! md:px-8! md:py-12! lg:px-16! lg:py-16!">
         <section className="mb-8! pb-6! border-b border-slate-800/30">
-          <label className="block text-slate-400 text-sm font-medium mb-4">
+          <label className="block text-slate-400 text-sm font-medium mb-4!">
             Série
           </label>
           <div className="flex flex-wrap gap-2">

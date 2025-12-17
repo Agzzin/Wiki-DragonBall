@@ -48,7 +48,7 @@ function TechniquesPage() {
 
       <main className="flex-1 px-4! py-8! md:px-8! md:py-12! lg:px-16! lg:py-16!">
         <section className="mb-12! pb-8! border-b border-slate-800/30">
-          <label className="block text-slate-400 text-sm font-medium mb-4">
+          <label className="block text-slate-400 text-sm font-medium mb-8!">
             Tipo
           </label>
           <div className="flex flex-wrap gap-2">

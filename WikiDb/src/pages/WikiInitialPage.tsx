@@ -17,7 +17,8 @@ import { Link } from "react-router-dom";
 
 function WikiInitialPage() {
   return (
-    <section className="container mx-auto px-4">
+    <section className="">
+    <section className="container px-4 w-full max-w-full mx-0">
       <header>
         <section className="bg-linear-to-r from-orange-500 via-orange-600 to-red-600 pt-8! flex flex-col items-center pb-8!">
           <button className="bg-white/17 border-none text-white p-2.5! rounded-full flex items-center hover:bg-white/25 transition-colors mt-8 gap-2.5">
@@ -67,7 +68,7 @@ function WikiInitialPage() {
               Navegue por categorias e descubra tudo sobre o universo Dragon
               Ball
             </p>
-            <section className="pt-12 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 transition-transform duration-300 ease-in-out cursor-pointer pb-30">
+            <section className="pl-4 pr-4 pt-12 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 transition-transform duration-300 ease-in-out cursor-pointer pb-30">
               <CardCuriosities
                 link={{ to: "caracters" }}
                 icon={Users}
@@ -150,7 +151,7 @@ function WikiInitialPage() {
           </section>
         </section>
 
-        <section className="py-20! px-5! bg-black">
+        <section className="px-5! bg-black">
           <div className="w-full mx-auto text-center">
             <div className="text-center mb-15">
               <h2 className="text-4xl font-bold text-white mb-3">
@@ -161,8 +162,8 @@ function WikiInitialPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 pb-32! place-items-center">
-              <div className="text-left group relative overflow-hidden cursor-pointer rounded-3xl px-15! py-23! bg-linear-to-br from-purple-600 to-purple-400 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+            <div className="pr-4! pl-4! grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 pb-32! place-items-center">
+              <div className="text-left group relative overflow-hidden cursor-pointer rounded-3xl px-10! py-23! bg-linear-to-br from-purple-600 to-purple-400 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
                 <Swords className="w-15! h-15! mb-6 text-white stroke-[1.8]" />
                 <h3 className="text-2xl font-semibold text-white mb-2">
                   Comparar
@@ -172,7 +173,7 @@ function WikiInitialPage() {
                 </p>
               </div>
 
-              <div className="group relative overflow-hidden cursor-pointer rounded-3xl px-15! py-23! bg-linear-to-br from-pink-500 to-pink-300 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] text-left">
+              <div className="group relative overflow-hidden cursor-pointer rounded-3xl px-10! py-23! bg-linear-to-br from-pink-500 to-pink-300 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] text-left">
                 <Brain className="w-15 h-15 mb-6 text-white stroke-[1.8]" />
                 <h3 className="text-2xl font-semibold text-white mb-2">
                   Quiz
@@ -182,7 +183,7 @@ function WikiInitialPage() {
                 </p>
               </div>
 
-              <div className="text-left group relative overflow-hidden cursor-pointer rounded-3xl px-15! py-23! bg-linear-to-br from-red-500 to-red-400 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+              <div className="text-left group relative overflow-hidden cursor-pointer rounded-3xl px-10! py-23! bg-linear-to-br from-red-500 to-red-400 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
                 <Heart className="w-15! h-15! mb-6 text-white stroke-[1.8]" />
                 <h3 className="text-2xl font-semibold text-white mb-2">
                   Favoritos
@@ -208,6 +209,7 @@ function WikiInitialPage() {
           reservados.
         </p>
       </footer>
+    </section>
     </section>
   );
 }
