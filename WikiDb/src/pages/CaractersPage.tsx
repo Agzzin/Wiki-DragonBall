@@ -46,7 +46,7 @@ export default function CaracterPage() {
   }, []);
 
   return (
-    <section className="flex min-h-screen flex-col bg-gradient-to-b from-blue-950 to-slate-800 text-white font-sans">
+    <section className="flex min-h-screen flex-col bg-linear-to-b from-blue-950 to-slate-800 text-white font-sans">
       <Menu />
       <Header
         subtitle="akdjasldkasjdk"
@@ -60,7 +60,7 @@ export default function CaracterPage() {
         <section className="w-full max-w-7xl">
           <section className="mb-8">
             <section className="mb-6">
-              <section className="flex flex-wrap gap-2">
+              <section className="flex flex-wrap gap-2 justify-center ">
                 {loading ? (
                   <Loading />
                 ) : (

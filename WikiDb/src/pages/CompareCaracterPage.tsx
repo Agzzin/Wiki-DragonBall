@@ -5,7 +5,7 @@ import Footer from "../Components/Footer";
 
 export default function CompareCharacters() {
   return (
-    <section className="flex min-h-screen flex-col bg-gradient-to-b from-indigo-950 to-slate-800 pt-28 px-4">
+    <section className="flex min-h-screen flex-col bg-linear-to-b from-indigo-950 to-slate-800 pt-28 px-4">
       <Menu />
       <section className="mb-12!">
         <Header
