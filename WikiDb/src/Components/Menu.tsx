@@ -22,7 +22,7 @@ function DragonBallMenu() {
 
   return (
     <nav className="bg-slate-900/95 border-b border-slate-700 fixed w-full top-0 left-0 z-50 backdrop-blur-sm">
-      <section className="max-w-7xl mx-auto px-4">
+      <section className="max-w-7xl mx-auto px-4 ml-8!">
         <section className="flex items-center justify-between h-16">
         
           <section className="flex items-center gap-2">
@@ -39,7 +39,7 @@ function DragonBallMenu() {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`flex items-center gap-2 px-4! py-2! text-sm font-medium rounded-lg transition-all duration-300 text-slate-300 hover:text-white hover:bg-slate-700/50 ${
+                  className={`flex items-center gap-2 px-4! py-2! text-sm font-medium rounded-lg transition-all duration-300 text-slate-300! hover:text-white hover:bg-slate-700/50 ${
                     isActive(item.path)
                       ? "bg-orange-500/20 text-orange-400 border border-orange-500/30"
                       : ""

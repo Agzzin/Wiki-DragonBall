@@ -5,7 +5,7 @@ import Footer from "../Components/Footer";
 
 export default function QuizPage() {
   return (
-    <section className="min-h-screen bg-linear-to-b from-blue-950 to-slate-800 text-white font-sans pt-28!">
+    <section className="min-h-screen  bg-linear-to-b from-slate-900 via-slate-950 to-black text-white font-sans pt-28!">
       <Menu />
 
       <section className="quiz-header px-4!">

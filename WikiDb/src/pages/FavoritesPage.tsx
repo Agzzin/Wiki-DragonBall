@@ -4,7 +4,7 @@ import Footer from '../Components/Footer';
 
 export default function FavoritosPage() {
   return (
-    <div className="pt-24! pl-8!   min-h-screen bg-linear-to-b from-slate-900 via-slate-800 to-slate-900 text-white">
+    <div className="pt-24! pl-8!   min-h-screen  bg-linear-to-b from-slate-900 via-slate-950 to-black text-white">
       <div className="border-b border-slate-700">
         <div className="max-w-7xl mx-auto px-6!">
           <div className="flex items-center gap-4 py-8!">

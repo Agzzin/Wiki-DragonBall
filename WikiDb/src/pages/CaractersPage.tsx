@@ -48,17 +48,17 @@ export default function CaracterPage() {
   }, []);
 
   return (
-    <section className="flex min-h-screen flex-col bg-linear-to-b from-blue-950 to-slate-800 text-white font-sans">
+    <section className="flex min-h-screen flex-col  bg-linear-to-b from-slate-900 via-slate-950 to-black text-white font-sans">
       <Menu />
-      <section className="sm: pt-16! flex justify-center items-center">
-        <Header
+       <section className="sm: pt-16! flex justify-center items-center"></section>
+      <Header
           subtitle="akdjasldkasjdk"
           title="Personagens"
           icon={Users}
           colorHeaderIcon="#fb923c71"
           colorIcon="#FB923C"
         />
-      </section>
+     
 
       <main className="flex flex-1 items-center justify-center px-4 py-8 mt-16">
         <section className="w-full max-w-7xl">
@@ -69,7 +69,7 @@ export default function CaracterPage() {
                   <Loading />
                 </section>
               ) : (
-                <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-5 md:gap-6 justify-items-center">
+                <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-12! sm:gap-5 md:gap-6 justify-items-center">
                   {characters.map((character) => (
                     <CardPerson
                       key={character.id}
