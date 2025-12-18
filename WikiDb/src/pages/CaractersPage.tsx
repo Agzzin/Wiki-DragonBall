@@ -50,15 +50,15 @@ export default function CaracterPage() {
   return (
     <section className="flex min-h-screen flex-col  bg-linear-to-b from-slate-900 via-slate-950 to-black text-white font-sans">
       <Menu />
-       <section className="sm: pt-16! flex justify-center items-center"></section>
-      <Header
+      <section className="sm: pt-16! flex justify-center items-center"></section>
+      
+        <Header
           subtitle="akdjasldkasjdk"
           title="Personagens"
           icon={Users}
           colorHeaderIcon="#fb923c71"
           colorIcon="#FB923C"
         />
-     
 
       <main className="flex flex-1 items-center justify-center px-4 py-8 mt-16">
         <section className="w-full max-w-7xl">

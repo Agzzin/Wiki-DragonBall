@@ -4,10 +4,10 @@ import Footer from '../Components/Footer';
 
 export default function FavoritosPage() {
   return (
-    <div className="pt-24! pl-8!   min-h-screen  bg-linear-to-b from-slate-900 via-slate-950 to-black text-white">
+    <div className="pt-24! pl-0!   min-h-screen  bg-linear-to-b from-slate-900 via-slate-950 to-black text-white">
       <div className="border-b border-slate-700">
         <div className="max-w-7xl mx-auto px-6!">
-          <div className="flex items-center gap-4 py-8!">
+          <div className="flex items-center gap-4 py-8! pl-8!">
             <Menu />
             <div className="w-16 h-16 bg-linear-to-br from-rose-900 to-rose-700 rounded-xl flex items-center justify-center">
               <Heart className="w-8 h-8 text-rose-300" fill="currentColor" />
@@ -41,8 +41,9 @@ export default function FavoritosPage() {
         </div>
       </div>
       </section>
-
-      <Footer />
+      <section>
+         <Footer />
+      </section>
     </div>
   );
 }
