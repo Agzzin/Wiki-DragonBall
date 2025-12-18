@@ -16,7 +16,6 @@ export const ROUTES = {
     COMPARE_CHARACTERS: '/compare-caracters',
     QUIZ: '/quiz',
     FAVORITE: '/favorites'
-
 }
 
 export const routeConfig = [

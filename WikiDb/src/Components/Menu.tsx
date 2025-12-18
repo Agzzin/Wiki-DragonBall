@@ -54,7 +54,7 @@ function DragonBallMenu() {
 
           <button
             onClick={toggleMenu}
-            className="lg:hidden text-white hover:text-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-500 rounded-lg p-2! mr-4! transition-colors"
+            className="lg:hidden text-white hover:text-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-500 rounded-lg p-2! mr-2! transition-colors"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

@@ -35,7 +35,9 @@ export default function CaracterPage() {
           const data = await response.json();
           setCharacters(data.items);
         } catch (error) {
-          setError(error instanceof Error ? error.message : "Erro desconhecido");
+          setError(
+            error instanceof Error ? error.message : "Erro desconhecido"
+          );
           console.log(erro);
         } finally {
           setLoading(false);
@@ -48,37 +50,39 @@ export default function CaracterPage() {
   return (
     <section className="flex min-h-screen flex-col bg-linear-to-b from-blue-950 to-slate-800 text-white font-sans">
       <Menu />
-      <Header
-        subtitle="akdjasldkasjdk"
-        title="Personagens"
-        icon={Users}
-        colorHeaderIcon="#fb923c71"
-        colorIcon="#FB923C"
-      />
+      <section className="sm: pt-16! flex justify-center items-center">
+        <Header
+          subtitle="akdjasldkasjdk"
+          title="Personagens"
+          icon={Users}
+          colorHeaderIcon="#fb923c71"
+          colorIcon="#FB923C"
+        />
+      </section>
 
-      <main className="flex flex-1 items-center justify-center px-4">
+      <main className="flex flex-1 items-center justify-center px-4 py-8 mt-16">
         <section className="w-full max-w-7xl">
           <section className="mb-8">
             <section className="mb-6">
-              <section className="flex flex-wrap gap-2 justify-center ">
-                {loading ? (
+              {loading ? (
+                <section className="flex justify-center items-center min-h-96">
                   <Loading />
-                ) : (
-                  <section className="grid grid-cols-5 gap-4 md:grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 w-full">
-                    {characters.map((character) => (
-                      <CardPerson
-                        key={character.id}
-                        race={character.race}
-                        image={character.image}
-                        name={character.name}
-                        firstAppearance={character.affiliation}
-                        icon={Shield}
-                        transform={character.ki}
-                      />
-                    ))}
-                  </section>
-                )}
-              </section>
+                </section>
+              ) : (
+                <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-5 md:gap-6 justify-items-center">
+                  {characters.map((character) => (
+                    <CardPerson
+                      key={character.id}
+                      race={character.race}
+                      image={character.image}
+                      name={character.name}
+                      firstAppearance={character.affiliation}
+                      icon={Shield}
+                      transform={character.ki}
+                    />
+                  ))}
+                </section>
+              )}
             </section>
           </section>
         </section>
