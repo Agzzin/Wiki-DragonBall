@@ -1,31 +1,45 @@
 import type { LucideIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-type CardPersonProps = {
+export type CardPersonProps = {
   race: string;
-  image: string | null;
+  image: string | undefined;
   name: string;
-  firstAppearance: string;
+  affiliation: string;
   transform: string[] | string;
   icon: LucideIcon;
+  description: string;
 };
 
 export function CardPerson({
   race,
   image,
   name,
-  firstAppearance,
+  affiliation,
   transform,
   icon: Icon,
+  description
 }: CardPersonProps) {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const HandlePressCard = () => {
-    navigate('/caracter/details')
+    navigate("/caracter/details", {
+      state: {
+        race,
+        image,
+        name,
+        affiliation,
+        transform,
+        
+      },
+    });
   };
 
   return (
-    <section className="relative bg-linear-to-br from-[#1c2739] via-[#192335] to-[#1d283a] border border-white/20 rounded-2xl w-65 max-w-65 h-auto sm:h-105 sm:w-65 sm:max-w-65 sm:aspect-260/420 overflow-hidden flex flex-col cursor-pointer transition-all duration-300 ease-in-out hover:-translate-y-1.5 hover:border-[#e95f0d] group mx-auto sm:mx-0" onClick={HandlePressCard}>
+    <section
+      className="relative bg-linear-to-br from-[#1c2739] via-[#192335] to-[#1d283a] border border-white/20 rounded-2xl w-65 max-w-65 h-auto sm:h-105 sm:w-65 sm:max-w-65 sm:aspect-260/420 overflow-hidden flex flex-col cursor-pointer transition-all duration-300 ease-in-out hover:-translate-y-1.5 hover:border-[#e95f0d] group mx-auto sm:mx-0"
+      onClick={HandlePressCard}
+    >
       <section className="absolute top-3 right-3 z-10 bg-yellow-400/53 border border-yellow-400/80 rounded-xl px-2.5! py-1! flex items-center justify-center gap-1.5">
         <p className="text-black font-semibold text-xs whitespace-nowrap overflow-hidden text-ellipsis">
           {race}
@@ -53,26 +67,11 @@ export function CardPerson({
 
       <section className="p-5! pb-6! sm:p-4 sm:pb-6 flex flex-col gap-1.5 flex-1 min-h-0">
         <p className="text-white/70 text-sm m-0">
-          Primeira aparição: {firstAppearance}
+          Time: {affiliation}
         </p>
 
         <section className="flex gap-1 flex-wrap pt-1 items-center">
-          {Array.isArray(transform) ? (
-            transform.map((t, idx) => (
-              <section
-                key={idx}
-                className="bg-yellow-400/27 rounded-lg px-2! py-1!"
-              >
-                <p className="text-yellow-400 text-xs font-medium m-0">{t}</p>
-              </section>
-            ))
-          ) : (
-            <section className="bg-yellow-400/27 rounded-lg px-2! py-1!">
-              <p className="text-yellow-400 text-xs font-medium m-0">
-                {transform}
-              </p>
-            </section>
-          )}
+         Descrição: {description}
         </section>
       </section>
     </section>

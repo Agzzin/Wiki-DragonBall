@@ -12,7 +12,7 @@ import {
   Heart,
 } from "lucide-react";
 import { CardCuriosities } from "../Components/CardCuriosities";
-import { CardPerson } from "../Components/CardPerson";
+import { CardPersonInitial } from "../Components/CardPersonInitial";
 import { Link } from "react-router-dom";
 
 function WikiInitialPage() {
@@ -112,7 +112,7 @@ function WikiInitialPage() {
             Conheça os guerreiros mais icônicos
           </p>
           <section className="flex flex-col md:flex-row items-center justify-center gap-8 pt-16">
-            <CardPerson
+            <CardPersonInitial
               race="Sayajin"
               image="https://i.pinimg.com/736x/a5/a7/f9/a5a7f9fad4ce2a546e053c95005e63b0.jpg"
               name="Broly"
@@ -120,7 +120,8 @@ function WikiInitialPage() {
               transform="Super Saiyajin Lendário"
               icon={Shield}
             />
-            <CardPerson
+            <CardPersonInitial
+
               race="Saiyajin"
               image="https://uploads.alternativanerd.com.br/wp-content/uploads/2018/03/AN_Goku-Intinto-Superior.jpg"
               name="Goku"
@@ -132,7 +133,7 @@ function WikiInitialPage() {
               ]}
               icon={Shield}
             />
-            <CardPerson
+            <CardPersonInitial
               race="Saiyajin"
               image="https://wallpapers.com/images/hd/majin-vegeta-smile-5g4t1zilgzsodudn.jpg"
               name="Vegeta"
@@ -140,7 +141,8 @@ function WikiInitialPage() {
               transform={["Super Saiyajin", "Super Saiyajin Blue", "Ultra Ego"]}
               icon={Shield}
             />
-            <CardPerson
+            <CardPersonInitial
+        
               race="Kaioshin"
               image="https://ovicio.com.br/wp-content/uploads/2019/12/20191201-goku-black-01-1280x720.jpg"
               name="Zamasu"

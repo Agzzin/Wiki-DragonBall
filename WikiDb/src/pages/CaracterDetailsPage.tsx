@@ -2,9 +2,10 @@ import { useState } from "react";
 import { Heart, Zap, Ruler, Scale } from "lucide-react";
 import Menu from "../Components/Menu";
 import Footer from "../Components/Footer";
+import { useLocation } from "react-router-dom";
+import type { CardPersonProps } from "../Components/CardPerson";
 
 type CaracterDetailsProps = {
-  race: string;
   team: string;
   firstAppearance: string;
   name: string;
@@ -18,11 +19,7 @@ type CaracterDetailsProps = {
 };
 
 export default function CaracterPageDetails({
-  race,
   team,
-  firstAppearance,
-  name,
-  paragraph,
   power,
   height,
   wheight,
@@ -31,6 +28,9 @@ export default function CaracterPageDetails({
   family,
 }: CaracterDetailsProps) {
   const [isFavorite, setIsFavorite] = useState(false);
+  const location = useLocation();
+  const { race, image, name, affiliation  } =
+    location.state as CardPersonProps ;
 
   return (
     <section>
@@ -40,9 +40,11 @@ export default function CaracterPageDetails({
         </section>
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
-            <section className="w-full lg:w-auto lg:flex-shrink-0">
-              <div className="rounded-3xl overflow-hidden bg-linear-to-b from-red-500 via-red-600 to-red-800 shadow-2xl w-full lg:w-96 aspect-[3/4] flex items-center justify-center">
-                <div className="text-red-200/50 text-center p-8!"></div>
+            <section className="w-full lg:w-auto lg:shrink-0">
+              <div className="rounded-3xl overflow-hidden bg-linear-to-b from-slate-900 via-slate-950 to-black shadow-2xl w-full lg:w-96 aspect-3/4 flex items-center justify-center">
+                <div className="text-red-200/50 text-center p-8!">
+                  <img src={image} className="h-[60vh]" />
+                </div>
               </div>
             </section>
 
@@ -56,7 +58,7 @@ export default function CaracterPageDetails({
                     {team}
                   </span>
                   <span className="px-4! py-1.5! bg-gray-700/60 text-gray-300 rounded-md text-sm">
-                    {firstAppearance}
+                    {affiliation}
                   </span>
                 </div>
                 <button
@@ -78,7 +80,7 @@ export default function CaracterPageDetails({
 
               <div className="mb-8!">
                 <p className="text-gray-300 text-base leading-relaxed">
-                  {paragraph}
+                  
                 </p>
               </div>
 
@@ -92,7 +94,9 @@ export default function CaracterPageDetails({
                 <div className="bg-gray-800/80 rounded-xl p-4! text-center">
                   <Ruler className="w-5 h-5 text-blue-400 mx-auto mb-2!" />
                   <p className="text-gray-400 text-xs mb-2!">Altura</p>
-                  <p className="text-white text-lg font-semibold">{height} cm</p>
+                  <p className="text-white text-lg font-semibold">
+                    {height} cm
+                  </p>
                 </div>
 
                 <div className="bg-gray-800/80 rounded-xl p-4! text-center">

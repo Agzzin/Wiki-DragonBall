@@ -1,5 +1,5 @@
 import { useContext, createContext, useState } from "react";
-interface Character {
+export interface Character {
   id: number;
   name: string;
   race: string;
@@ -8,6 +8,8 @@ interface Character {
   description: string;
   ki: string;
 }
+
+
 
 interface WikiContextType {
   loading: boolean;
@@ -40,6 +42,7 @@ export const ContextWikiProvider = ({ children }: ChildrenProps) => {
         const data = await response.json();
         if (data.items && Array.isArray(data.items)) {
           setCaracters(data.items);
+          console.log(data)
         } else {
           setCaracters([]);
         }
