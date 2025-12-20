@@ -23,7 +23,7 @@ export default function Header({ title, icon: Icon, colorHeaderIcon, colorIcon, 
         </section>
         
         <section className="flex flex-col">
-          <h1 className="text-4xl font-black leading-tight text-white">
+          <h1 className="text-3xl font-black leading-tight text-white">
             {title}
           </h1>
           <p className="text-slate-400 text-lg">{subtitle}</p>

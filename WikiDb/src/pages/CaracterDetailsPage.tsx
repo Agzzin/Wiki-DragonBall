@@ -1,16 +1,42 @@
 import { useState } from "react";
 import { Heart, Zap, Ruler, Scale } from "lucide-react";
-import Menu from '../Components/Menu'
+import Menu from "../Components/Menu";
 import Footer from "../Components/Footer";
 
-export default function CaracterPageDetails() {
+type CaracterDetailsProps = {
+  race: string;
+  team: string;
+  firstAppearance: string;
+  name: string;
+  paragraph: string;
+  power: string;
+  height: number;
+  wheight: number;
+  transformations: string;
+  techniques: string;
+  family: string;
+};
+
+export default function CaracterPageDetails({
+  race,
+  team,
+  firstAppearance,
+  name,
+  paragraph,
+  power,
+  height,
+  wheight,
+  transformations,
+  techniques,
+  family,
+}: CaracterDetailsProps) {
   const [isFavorite, setIsFavorite] = useState(false);
 
   return (
-    <section >
+    <section>
       <section className="min-h-screen bg-linear-to-b from-orange-600 bg-black to-black p-4! md:p-6! lg:p-8!">
-          <section className="pb-16!">
-            <Menu/>
+        <section className="pb-16!">
+          <Menu />
         </section>
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
@@ -24,13 +50,13 @@ export default function CaracterPageDetails() {
               <div className="flex items-start justify-between mb-6">
                 <div className="flex flex-wrap gap-2">
                   <span className="px-4! py-1.5! bg-orange-900/60 text-orange-300 rounded-md text-sm">
-                    Saiyajin
+                    {race}
                   </span>
                   <span className="px-4! py-1.5! bg-blue-900/60 text-blue-300 rounded-md text-sm">
-                    Guerreiros Z
+                    {team}
                   </span>
                   <span className="px-4! py-1.5! bg-gray-700/60 text-gray-300 rounded-md text-sm">
-                    Dragon Ball Z
+                    {firstAppearance}
                   </span>
                 </div>
                 <button
@@ -46,16 +72,13 @@ export default function CaracterPageDetails() {
               </div>
               <div>
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-2!">
-                  Vegeta
+                  {name}
                 </h1>
-                <p className="text-gray-400 text-base mb-8!">ベジータ</p>
               </div>
 
               <div className="mb-8!">
                 <p className="text-gray-300 text-base leading-relaxed">
-                  O príncipe dos Saiyajins e eterno rival de Goku. Inicialmente
-                  um vilão cruel, tornou-se um dos defensores mais leais da
-                  Terra. Seu orgulho Saiyajin é lendário.
+                  {paragraph}
                 </p>
               </div>
 
@@ -63,21 +86,21 @@ export default function CaracterPageDetails() {
                 <div className="bg-gray-800/80 rounded-xl p-4! text-center">
                   <Zap className="w-5 h-5 text-yellow-400 mx-auto mb-2!" />
                   <p className="text-gray-400 text-xs mb-2!">Poder</p>
-                  <p className="text-white text-lg font-semibold">
-                    ∞ (Infinito)
-                  </p>
+                  <p className="text-white text-lg font-semibold">{power}</p>
                 </div>
 
                 <div className="bg-gray-800/80 rounded-xl p-4! text-center">
                   <Ruler className="w-5 h-5 text-blue-400 mx-auto mb-2!" />
                   <p className="text-gray-400 text-xs mb-2!">Altura</p>
-                  <p className="text-white text-lg font-semibold">164 cm</p>
+                  <p className="text-white text-lg font-semibold">{height} cm</p>
                 </div>
 
                 <div className="bg-gray-800/80 rounded-xl p-4! text-center">
                   <Scale className="w-5 h-5 text-green-400 mx-auto mb-2!" />
                   <p className="text-gray-400 text-xs mb-2!">Peso</p>
-                  <p className="text-white text-lg font-semibold">56 kg</p>
+                  <p className="text-white text-lg font-semibold">
+                    {wheight} kg
+                  </p>
                 </div>
               </div>
 
@@ -90,7 +113,7 @@ export default function CaracterPageDetails() {
                 </div>
                 <div className="flex flex-wrap gap-3">
                   <span className="px-5! py-2! bg-orange-800/80 hover:bg-orange-700/80 text-orange-100 rounded-lg text-sm transition cursor-pointer">
-                    Super Saiyajin
+                    {transformations}
                   </span>
                   <span className="px-5! py-2! bg-orange-800/80 hover:bg-orange-700/80 text-orange-100 rounded-lg text-sm transition cursor-pointer">
                     SSJ2
@@ -117,7 +140,7 @@ export default function CaracterPageDetails() {
                 </div>
                 <div className="flex flex-wrap gap-3">
                   <span className="px-5! py-2! bg-gray-800/60 hover:bg-gray-700/60 text-gray-300 rounded-lg text-sm transition cursor-pointer">
-                    Big Bang Attack
+                    {techniques}
                   </span>
                   <span className="px-5! py-2! bg-gray-800/60 hover:bg-gray-700/60 text-gray-300 rounded-lg text-sm transition cursor-pointer">
                     Final Flash
@@ -144,7 +167,7 @@ export default function CaracterPageDetails() {
                 </div>
                 <div className="flex flex-wrap gap-3">
                   <span className="px-5! py-2! bg-purple-900/40 hover:bg-purple-800/40 text-purple-300 rounded-lg text-sm transition cursor-pointer">
-                    Rei Vegeta (pai)
+                    {family}
                   </span>
                   <span className="px-5! py-2! bg-purple-900/40 hover:bg-purple-800/40 text-purple-300 rounded-lg text-sm transition cursor-pointer">
                     Bulma (esposa)
@@ -160,9 +183,9 @@ export default function CaracterPageDetails() {
             </section>
           </div>
         </div>
-        <section className="pt-8!">
-            <Footer/>
-        </section>
+      </section>
+      <section>
+        <Footer />
       </section>
     </section>
   );

@@ -11,7 +11,7 @@ export default function QuizPage() {
       <section className="quiz-header px-4!">
         <Header
           subtitle="Teste seus conhecimentos"
-          title="Quiz Dragon Ball"
+          title="Quiz"
           colorHeaderIcon="#c084fc77"
           colorIcon="#C084FC"
           icon={Brain}

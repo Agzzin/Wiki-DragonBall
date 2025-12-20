@@ -10,7 +10,7 @@ export default function CompareCharacters() {
       <section className="mb-12!">
         <Header
           subtitle="klsdajsdjas"
-          title="Comparar personagens"
+          title="Comparar"
           colorHeaderIcon="#c084fc77"
           colorIcon="#C084FC"
           icon={Swords}

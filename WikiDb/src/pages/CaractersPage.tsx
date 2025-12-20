@@ -2,49 +2,19 @@ import { Shield, Users } from "lucide-react";
 import Header from "../Components/Header";
 import Menu from "../Components/Menu";
 import Footer from "../Components/Footer";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Loading } from "../StyledComponents/loading";
 import { CardPerson } from "../Components/CardPerson";
+import { useWikiContext } from "../contexts/AuthContext";
 
-interface Character {
-  id: number;
-  name: string;
-  race: string;
-  affiliation: string;
-  image: string;
-  description: string;
-  ki: string;
-}
+
 
 export default function CaracterPage() {
-  const [characters, setCharacters] = useState<Character[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [erro, setError] = useState<string | null>(null);
+  const { GetCaracters,caracters, loading } = useWikiContext();
 
+  
   useEffect(() => {
-    const fetchCharacters = async () => {
-      setLoading(true);
-      setTimeout(async () => {
-        try {
-          const response = await fetch(
-            "https://dragonball-api.com/api/characters?limit=9999"
-          );
-          if (!response.ok) {
-            throw new Error("Erro ao carregar personagens");
-          }
-          const data = await response.json();
-          setCharacters(data.items);
-        } catch (error) {
-          setError(
-            error instanceof Error ? error.message : "Erro desconhecido"
-          );
-          console.log(erro);
-        } finally {
-          setLoading(false);
-        }
-      }, 5000);
-    };
-    fetchCharacters();
+    GetCaracters();
   }, []);
 
   return (
@@ -70,7 +40,7 @@ export default function CaracterPage() {
                 </section>
               ) : (
                 <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-12! sm:gap-5 md:gap-6 justify-items-center">
-                  {characters.map((character) => (
+                  {caracters.map((character) => (
                     <CardPerson
                       key={character.id}
                       race={character.race}

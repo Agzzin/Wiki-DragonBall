@@ -21,7 +21,6 @@ export default function Footer() {
   const animationRef = useRef<number | undefined>(undefined);
   const konamiRef = useRef<string[]>([]);
   const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-  
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       konamiRef.current.push(e.key);
@@ -199,7 +198,7 @@ export default function Footer() {
                 <a
                   key={link}
                   href={`#${link.toLowerCase()}`}
-                  className={`group relative px-6! py-3! rounded-lg font-semibold transition-all duration-300 hover:scale-110 ${
+                  className={`group relative px-6! py-3! rounded-lg font-semibold transition-all duration-300 hover:scale-110 text-white! ${
                     ultraInstinct
                       ? 'text-cyan-300 hover:text-cyan-100'
                       : 'text-orange-300 hover:text-orange-100'

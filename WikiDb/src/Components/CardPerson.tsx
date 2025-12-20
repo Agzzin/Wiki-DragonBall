@@ -1,4 +1,5 @@
 import type { LucideIcon } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 type CardPersonProps = {
   race: string;
@@ -17,8 +18,14 @@ export function CardPerson({
   transform,
   icon: Icon,
 }: CardPersonProps) {
+  const navigate = useNavigate()
+
+  const HandlePressCard = () => {
+    navigate('/caracter/details')
+  };
+
   return (
-    <section className="relative bg-linear-to-br from-[#1c2739] via-[#192335] to-[#1d283a] border border-white/20 rounded-2xl w-65 max-w-65 h-auto sm:h-105 sm:w-65 sm:max-w-65 sm:aspect-260/420 overflow-hidden flex flex-col cursor-pointer transition-all duration-300 ease-in-out hover:-translate-y-1.5 hover:border-[#e95f0d] group mx-auto sm:mx-0">
+    <section className="relative bg-linear-to-br from-[#1c2739] via-[#192335] to-[#1d283a] border border-white/20 rounded-2xl w-65 max-w-65 h-auto sm:h-105 sm:w-65 sm:max-w-65 sm:aspect-260/420 overflow-hidden flex flex-col cursor-pointer transition-all duration-300 ease-in-out hover:-translate-y-1.5 hover:border-[#e95f0d] group mx-auto sm:mx-0" onClick={HandlePressCard}>
       <section className="absolute top-3 right-3 z-10 bg-yellow-400/53 border border-yellow-400/80 rounded-xl px-2.5! py-1! flex items-center justify-center gap-1.5">
         <p className="text-black font-semibold text-xs whitespace-nowrap overflow-hidden text-ellipsis">
           {race}
