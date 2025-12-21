@@ -7,6 +7,7 @@ export interface Character {
   image: string;
   description: string;
   ki: string;
+  maxKi:string;
 }
 
 

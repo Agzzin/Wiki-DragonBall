@@ -8,7 +8,8 @@ export type CardPersonProps = {
   affiliation: string;
   description: string;
   icon: LucideIcon;
-  kiPower:string
+  kiPower:string;
+  maxKi:string;
 };
 
 export function CardPerson({
@@ -18,7 +19,8 @@ export function CardPerson({
   affiliation,
   description,
   icon: Icon,
-  kiPower
+  kiPower,
+  maxKi
 }: CardPersonProps) {
   const navigate = useNavigate();
 
@@ -30,7 +32,8 @@ export function CardPerson({
         name,
         affiliation,
         kiPower,
-        description
+        description,
+        maxKi
       },
     });
   };

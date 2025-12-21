@@ -40,6 +40,7 @@ export default function CaracterPage() {
                 <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-12! sm:gap-5 md:gap-6 justify-items-center">
                   {caracters.map((character) => (
                     <CardPerson
+                    maxKi={character.maxKi}
                       description={character.description}
                       kiPower={character.ki}
                       key={character.id}

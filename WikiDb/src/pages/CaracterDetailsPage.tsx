@@ -1,35 +1,15 @@
 import { useState } from "react";
-import { Heart, Zap, Ruler, Scale } from "lucide-react";
+import { Heart, Zap } from "lucide-react";
 import Menu from "../Components/Menu";
 import Footer from "../Components/Footer";
 import { useLocation } from "react-router-dom";
 import type { CardPersonProps } from "../Components/CardPerson";
 
-type CaracterDetailsProps = {
-  team: string;
-  firstAppearance: string;
-  name: string;
-  paragraph: string;
-  power: string;
-  height: number;
-  wheight: number;
-  transformations: string;
-  techniques: string;
-  family: string;
-};
-
-export default function CaracterPageDetails({
-  team,
-  height,
-  wheight,
-  transformations,
-  techniques,
-  family,
-}: CaracterDetailsProps) {
+export default function CaracterPageDetails() {
   const [isFavorite, setIsFavorite] = useState(false);
   const location = useLocation();
-  const { race, image, name, affiliation, kiPower, description} =
-    location.state as CardPersonProps ;
+  const { race, image, name, affiliation, description, maxKi  } =
+    location.state as CardPersonProps;
 
   return (
     <section>
@@ -57,7 +37,7 @@ export default function CaracterPageDetails({
                     {affiliation}
                   </span>
                   <span className="px-4! py-1.5! bg-gray-700/60 text-gray-300 rounded-md text-sm">
-                  Dragon Ball
+                    Dragon ball
                   </span>
                 </div>
                 <button
@@ -72,7 +52,7 @@ export default function CaracterPageDetails({
                 </button>
               </div>
               <div>
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-2!">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4!">
                   {name}
                 </h1>
               </div>
@@ -83,104 +63,11 @@ export default function CaracterPageDetails({
                 </p>
               </div>
 
-              <div className="grid grid-cols-3 gap-4 mb-10!">
-                <div className="bg-gray-800/80 rounded-xl p-4! text-center">
+              <div className="flex justify-center items-center gap-4 mb-10!">
+                <div className="bg-gray-800/80 rounded-xl p-8! text-center flex flex-col justify-center items-center">
                   <Zap className="w-5 h-5 text-yellow-400 mx-auto mb-2!" />
-                  <p className="text-gray-400 text-xs mb-2!">Poder</p>
-                  <p className="text-white text-lg font-semibold">{kiPower}</p>
-                </div>
-
-                <div className="bg-gray-800/80 rounded-xl p-4! text-center">
-                  <Ruler className="w-5 h-5 text-blue-400 mx-auto mb-2!" />
-                  <p className="text-gray-400 text-xs mb-2!">Altura</p>
-                  <p className="text-white text-lg font-semibold">
-                    {height} cm
-                  </p>
-                </div>
-
-                <div className="bg-gray-800/80 rounded-xl p-4! text-center">
-                  <Scale className="w-5 h-5 text-green-400 mx-auto mb-2!" />
-                  <p className="text-gray-400 text-xs mb-2!">Peso</p>
-                  <p className="text-white text-lg font-semibold">
-                    {wheight} kg
-                  </p>
-                </div>
-              </div>
-
-              <div className="mb-8!">
-                <div className="flex items-center gap-2 mb-4!">
-                  <Zap className="w-5 h-5 text-yellow-400" />
-                  <h2 className="text-xl font-semibold text-white">
-                    Transformações
-                  </h2>
-                </div>
-                <div className="flex flex-wrap gap-3">
-                  <span className="px-5! py-2! bg-orange-800/80 hover:bg-orange-700/80 text-orange-100 rounded-lg text-sm transition cursor-pointer">
-                    {transformations}
-                  </span>
-                  <span className="px-5! py-2! bg-orange-800/80 hover:bg-orange-700/80 text-orange-100 rounded-lg text-sm transition cursor-pointer">
-                    SSJ2
-                  </span>
-                  <span className="px-5! py-2! bg-orange-800/80 hover:bg-orange-700/80 text-orange-100 rounded-lg text-sm transition cursor-pointer">
-                    SSJ Blue
-                  </span>
-                  <span className="px-5! py-2! bg-orange-800/80 hover:bg-orange-700/80 text-orange-100 rounded-lg text-sm transition cursor-pointer">
-                    Ultra Ego
-                  </span>
-                </div>
-              </div>
-
-              <div className="mb-8!">
-                <div className="flex items-center gap-2 mb-4!">
-                  <svg
-                    className="w-5 h-5 text-orange-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M10 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-7-5z" />
-                  </svg>
-                  <h2 className="text-xl font-semibold text-white">Técnicas</h2>
-                </div>
-                <div className="flex flex-wrap gap-3">
-                  <span className="px-5! py-2! bg-gray-800/60 hover:bg-gray-700/60 text-gray-300 rounded-lg text-sm transition cursor-pointer">
-                    {techniques}
-                  </span>
-                  <span className="px-5! py-2! bg-gray-800/60 hover:bg-gray-700/60 text-gray-300 rounded-lg text-sm transition cursor-pointer">
-                    Final Flash
-                  </span>
-                  <span className="px-5! py-2! bg-gray-800/60 hover:bg-gray-700/60 text-gray-300 rounded-lg text-sm transition cursor-pointer">
-                    Galick Ho
-                  </span>
-                  <span className="px-5! py-2! bg-gray-800/60 hover:bg-gray-700/60 text-gray-300 rounded-lg text-sm transition cursor-pointer">
-                    Resplandor Final
-                  </span>
-                </div>
-              </div>
-
-              <div>
-                <div className="flex items-center gap-2 mb-4!">
-                  <svg
-                    className="w-5 h-5 text-purple-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-                  </svg>
-                  <h2 className="text-xl font-semibold text-white">Família</h2>
-                </div>
-                <div className="flex flex-wrap gap-3">
-                  <span className="px-5! py-2! bg-purple-900/40 hover:bg-purple-800/40 text-purple-300 rounded-lg text-sm transition cursor-pointer">
-                    {family}
-                  </span>
-                  <span className="px-5! py-2! bg-purple-900/40 hover:bg-purple-800/40 text-purple-300 rounded-lg text-sm transition cursor-pointer">
-                    Bulma (esposa)
-                  </span>
-                  <span className="px-5 py-2! bg-purple-900/40 hover:bg-purple-800/40 text-purple-300 rounded-lg text-sm transition cursor-pointer">
-                    Trunks (filho)
-                  </span>
-                  <span className="px-5! py-2! bg-purple-900/40 hover:bg-purple-800/40 text-purple-300 rounded-lg text-sm transition cursor-pointer">
-                    Bra (filha)
-                  </span>
+                  <p className="text-gray-400 text-xs mb-2!">Poder Maximo</p>
+                  <p className="text-white text-lg font-semibold">{maxKi}</p>
                 </div>
               </div>
             </section>
