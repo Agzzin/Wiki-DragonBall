@@ -20,7 +20,6 @@ type CaracterDetailsProps = {
 
 export default function CaracterPageDetails({
   team,
-  power,
   height,
   wheight,
   transformations,
@@ -29,7 +28,7 @@ export default function CaracterPageDetails({
 }: CaracterDetailsProps) {
   const [isFavorite, setIsFavorite] = useState(false);
   const location = useLocation();
-  const { race, image, name, affiliation  } =
+  const { race, image, name, affiliation, kiPower, description} =
     location.state as CardPersonProps ;
 
   return (
@@ -55,10 +54,10 @@ export default function CaracterPageDetails({
                     {race}
                   </span>
                   <span className="px-4! py-1.5! bg-blue-900/60 text-blue-300 rounded-md text-sm">
-                    {team}
+                    {affiliation}
                   </span>
                   <span className="px-4! py-1.5! bg-gray-700/60 text-gray-300 rounded-md text-sm">
-                    {affiliation}
+                  Dragon Ball
                   </span>
                 </div>
                 <button
@@ -80,7 +79,7 @@ export default function CaracterPageDetails({
 
               <div className="mb-8!">
                 <p className="text-gray-300 text-base leading-relaxed">
-                  
+                  {description}
                 </p>
               </div>
 
@@ -88,7 +87,7 @@ export default function CaracterPageDetails({
                 <div className="bg-gray-800/80 rounded-xl p-4! text-center">
                   <Zap className="w-5 h-5 text-yellow-400 mx-auto mb-2!" />
                   <p className="text-gray-400 text-xs mb-2!">Poder</p>
-                  <p className="text-white text-lg font-semibold">{power}</p>
+                  <p className="text-white text-lg font-semibold">{kiPower}</p>
                 </div>
 
                 <div className="bg-gray-800/80 rounded-xl p-4! text-center">

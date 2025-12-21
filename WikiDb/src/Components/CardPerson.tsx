@@ -6,9 +6,9 @@ export type CardPersonProps = {
   image: string | undefined;
   name: string;
   affiliation: string;
-  transform: string[] | string;
-  icon: LucideIcon;
   description: string;
+  icon: LucideIcon;
+  kiPower:string
 };
 
 export function CardPerson({
@@ -16,9 +16,9 @@ export function CardPerson({
   image,
   name,
   affiliation,
-  transform,
+  description,
   icon: Icon,
-  description
+  kiPower
 }: CardPersonProps) {
   const navigate = useNavigate();
 
@@ -29,8 +29,8 @@ export function CardPerson({
         image,
         name,
         affiliation,
-        transform,
-        
+        kiPower,
+        description
       },
     });
   };
@@ -71,7 +71,10 @@ export function CardPerson({
         </p>
 
         <section className="flex gap-1 flex-wrap pt-1 items-center">
-         Descrição: {description}
+         Poder:
+         <section className="bg-yellow-300/30 border border-yellow-400/80 rounded-xl px-2.5! py-1! flex items-center justify-center gap-1.5 text-sm">
+          {kiPower}
+         </section>
         </section>
       </section>
     </section>
