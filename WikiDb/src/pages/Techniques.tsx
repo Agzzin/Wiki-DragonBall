@@ -2,27 +2,8 @@ import Header from "../Components/Header";
 import { Zap } from "lucide-react";
 import Menu from "../Components/Menu";
 import Footer from "../Components/Footer";
+import { techniques } from "../data/TechniquesData";
 
-const techniques = [
-  {
-    id: 1,
-    name: "Kamehameha",
-    type: "Energia",
-    description:
-      "A técnica mais icônica de Dragon Ball. Uma poderosa onda de energia concentrada nas mãos e disparada em forma de raio. Foi criada pelo...",
-    users: ["Goku", "Gohan", "Goten", "Cell"],
-    moreUsers: 1,
-  },
-  {
-    id: 2,
-    name: "Genki Dama",
-    type: "Energia",
-    description:
-      "A Esfera de Energia Vital coleta energia de todos os seres vivos ao redor para criar uma esfera massiva de poder. É a técnica mais poderosa de...",
-    users: ["Goku"],
-    moreUsers: 0,
-  },
-];
 
 const types = [
   "Todos",
