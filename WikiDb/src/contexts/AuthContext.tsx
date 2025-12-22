@@ -1,4 +1,5 @@
-import { useContext, createContext, useState } from "react";
+import { useContext, createContext, useState, useEffect } from "react";
+
 export interface Character {
   id: number;
   name: string;
@@ -7,10 +8,8 @@ export interface Character {
   image: string;
   description: string;
   ki: string;
-  maxKi:string;
+  maxKi: string;
 }
-
-
 
 interface WikiContextType {
   loading: boolean;
@@ -32,28 +31,27 @@ export const ContextWikiProvider = ({ children }: ChildrenProps) => {
 
   const GetCaracters = async () => {
     setLoading(true);
-    setTimeout(async () => {
-      try {
-        const response = await fetch(
-          "https://dragonball-api.com/api/characters?limit=9999"
-        );
-        if (!response.ok) {
-          throw new Error("Erro ao carregar personagens");
-        }
-        const data = await response.json();
-        if (data.items && Array.isArray(data.items)) {
-          setCaracters(data.items);
-          console.log(data)
-        } else {
-          setCaracters([]);
-        }
-      } catch (error) {
-        setError(error instanceof Error ? error.message : "Erro desconhecido");
-      } finally {
-        setLoading(false);
+    try {
+      const response = await fetch("https://dragonball-api.com/api/characters?limit=9999");
+      if (!response.ok) {
+        throw new Error("Erro ao carregar personagens");
       }
-    }, 5000);
+      const data = await response.json();
+      if (data.items && Array.isArray(data.items)) {
+        setCaracters(data.items);
+      } else {
+        setCaracters([]);
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Erro desconhecido");
+    } finally {
+      setLoading(false);
+    }
   };
+
+  useEffect(() => {
+    GetCaracters();
+  }, []);
 
   return (
     <WikiContext.Provider value={{ GetCaracters, loading, error, caracters }}>
@@ -64,11 +62,8 @@ export const ContextWikiProvider = ({ children }: ChildrenProps) => {
 
 export const useWikiContext = () => {
   const context = useContext(WikiContext);
-
   if (!context) {
-    throw new Error(
-      "useWikiContext deve ser usado dentro de um ContextWikiProvider"
-    );
+    throw new Error("useWikiContext deve ser usado dentro de um ContextWikiProvider");
   }
   return context;
 };

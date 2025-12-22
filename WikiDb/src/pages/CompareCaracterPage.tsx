@@ -3,24 +3,38 @@ import Menu from "../Components/Menu";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import { useWikiContext } from "../contexts/AuthContext";
-import type { Character } from "../contexts/AuthContext";
 import { useState } from "react";
+import CharacterList from "../Components/CaracterList";
+
+
 
 export default function CompareCharacters() {
   const { caracters } = useWikiContext();
-  const [searchValue1, setSearchValue1] = useState("");
-  const [searchValue2, setSearchValue2] = useState("");
-  const [searchValue3, setSearchValue3] = useState("");
 
-  const filtered1 = caracters.filter((c) =>
-    c.name.toLowerCase().includes(searchValue1.toLowerCase())
+  console.log("caracters:", caracters);
+
+  const [searchValues, setSearchValues] = useState(["", "", ""]);
+  const [focusedCard, setFocusedCard] = useState<number | null>(null);
+
+  const filtered = searchValues.map((searchValue) =>
+    caracters.filter((c) =>
+      c.name.toLowerCase().includes(searchValue.toLowerCase())
+    )
   );
-  const filtered2 = caracters.filter((c) =>
-    c.name.toLowerCase().includes(searchValue2.toLowerCase())
-  );
-  const filtered3 = caracters.filter((c) =>
-    c.name.toLowerCase().includes(searchValue3.toLowerCase())
-  );
+
+  const handleChange = (index: number, value: string) => {
+    const newValues = [...searchValues];
+    newValues[index] = value;
+    setSearchValues(newValues);
+  };
+
+  const handleSelect = (index: number, name: string) => {
+    console.log("Nome selecionado:", name, "no card", index);
+    const newValues = [...searchValues];
+    newValues[index] = name;
+    setSearchValues(newValues);
+    setFocusedCard(null); 
+  };
 
   return (
     <section className="flex min-h-screen flex-col bg-linear-to-b from-slate-900 via-slate-950 to-black pt-28! px-4!">
@@ -38,11 +52,7 @@ export default function CompareCharacters() {
       </section>
 
       <section className="flex justify-center items-center gap-8 mb-12 flex-wrap">
-        {[
-          { value: searchValue1, setValue: setSearchValue1, filtered: filtered1 },
-          { value: searchValue2, setValue: setSearchValue2, filtered: filtered2 },
-          { value: searchValue3, setValue: setSearchValue3, filtered: filtered3 },
-        ].map((card, index) => (
+        {searchValues.map((value, index) => (
           <section
             key={index}
             className="w-96 flex flex-col items-center justify-center text-center p-8! bg-slate-800/60 border-2 border-dashed border-slate-700 rounded-2xl transition-all hover:border-slate-600 hover:bg-slate-800/80"
@@ -57,19 +67,21 @@ export default function CompareCharacters() {
               <input
                 type="text"
                 placeholder="Buscar personagem..."
-                value={card.value}
-                onChange={(e) => card.setValue(e.target.value)}
+                value={searchValues[index]}
+                onFocus={() => setFocusedCard(index)}
+                onBlur={() => setFocusedCard(null)}
+                onChange={(e) => handleChange(index, e.target.value)}
                 className="w-full px-4! py-3! text-sm text-slate-300 bg-slate-800/80 border border-slate-700 rounded-lg outline-none placeholder:text-slate-500 focus:border-indigo-500 focus:bg-slate-800 focus:shadow-indigo-500/10 transition-all"
               />
               <ul className="mt-2 max-h-40 overflow-y-auto">
-                {card.filtered.map((c) => (
-                  <li
-                    key={c.id}
-                    className="px-3 py-1 bg-slate-700/50 rounded mb-1 cursor-pointer hover:bg-slate-700/70 hover: text-white"
-                  >
-                    {c.name}
-                  </li>
-                ))}
+                {focusedCard === index && (
+                  <ul className="mt-2 max-h-40 overflow-y-auto text-white">
+                    <CharacterList
+                      characters={filtered[index]}
+                      onSelect={(name) => handleSelect(index, name)}
+                    />
+                  </ul>
+                )}
               </ul>
             </section>
           </section>
