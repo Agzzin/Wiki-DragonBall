@@ -14,19 +14,10 @@ import {
 import { CardCuriosities } from "../Components/CardCuriosities";
 import { CardPersonInitial } from "../Components/CardPersonInitial";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 
 function WikiInitialPage() {
 
-  useEffect(() =>{
-    const GetTransforms = async () =>{
-      const response = await fetch("https://dragonball-api.com/api/transformations")
-      const data = await response.json()
-      console.log(data)
-    }
-    GetTransforms(  )
-  },)
-
+ 
   return (
     <section className="">
     <section className="container px-4 w-full max-w-full mx-0">
