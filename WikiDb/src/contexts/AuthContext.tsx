@@ -15,7 +15,11 @@ interface WikiContextType {
   loading: boolean;
   caracters: Character[];
   error: string;
+  favorites: number[];
+  favoriteCharacters: Character[];
   GetCaracters: () => Promise<void>;
+  toggleFavorite: (id: number) => void;
+  isFavorite: (id: number) => boolean;
 }
 
 interface ChildrenProps {
@@ -28,6 +32,10 @@ export const ContextWikiProvider = ({ children }: ChildrenProps) => {
   const [loading, setLoading] = useState(false);
   const [caracters, setCaracters] = useState<Character[]>([]);
   const [error, setError] = useState("");
+  const [favorites, setFavorites] = useState<number[]>(() => {
+    const saved = localStorage.getItem("favorites");
+    return saved ? JSON.parse(saved) : [];
+  });
 
   const GetCaracters = async () => {
     setLoading(true);
@@ -49,12 +57,42 @@ export const ContextWikiProvider = ({ children }: ChildrenProps) => {
     }
   };
 
+  const toggleFavorite = (id: number) => {
+    setFavorites((prev) => {
+      const newFavorites = prev.includes(id)
+        ? prev.filter((favId) => favId !== id)
+        : [...prev, id];
+      
+      localStorage.setItem("favorites", JSON.stringify(newFavorites));
+      return newFavorites;
+    });
+  };
+
+  const isFavorite = (id: number) => {
+    return favorites.includes(id);
+  };
+
+  const favoriteCharacters = caracters.filter((character) =>
+    favorites.includes(character.id)
+  );
+
   useEffect(() => {
     GetCaracters();
   }, []);
 
   return (
-    <WikiContext.Provider value={{ GetCaracters, loading, error, caracters }}>
+    <WikiContext.Provider
+      value={{
+        GetCaracters,
+        loading,
+        error,
+        caracters,
+        favorites,
+        favoriteCharacters,
+        toggleFavorite,
+        isFavorite,
+      }}
+    >
       {children}
     </WikiContext.Provider>
   );
