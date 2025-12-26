@@ -5,13 +5,6 @@ import Footer from "../Components/Footer";
 import { useState } from "react";
 import {sagas} from '../data/SagasData'
 
-const seriesList = [
-  "Todas",
-  "Dragon Ball",
-  "Dragon Ball Z",
-  "Dragon Ball GT",
-  "Dragon Ball Super",
-];
 
 export default function SagasPage() {
   const [activeVideoUrl, setActiveVideoUrl] = useState<string | null>(null);
@@ -44,34 +37,14 @@ export default function SagasPage() {
       />
 
       <main className="flex-1 px-4! py-8! md:px-8! md:py-12! lg:px-16! lg:py-16!">
-        <section className="mb-8! pb-6! border-b border-slate-800/30">
-          <label className="block text-slate-400 text-sm font-medium mb-4!">
-            Série
-          </label>
-          <div className="flex flex-wrap gap-2">
-            {seriesList.map((serie, index) => (
-              <button
-                key={index}
-                className={`px-4! py-2! rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap
-                  bg-slate-800/40 border border-slate-700/50 text-slate-400 hover:bg-slate-800/60 hover:text-white hover:border-slate-600
-                  ${
-                    index === 0
-                      ? "bg-amber-500! text-white! border-amber-500!"
-                      : ""
-                  }`}
-              >
-                {serie}
-              </button>
-            ))}
-          </div>
-        </section>
+        
 
         <section>
           <h2 className="text-2xl md:text-3xl font-bold mb-6! pl-4! border-l-4 border-amber-500">
             Dragon Ball
           </h2>
 
-          <div className="space-y-4">
+          <div className="space-y-4!">
             {sagas.map((saga) => (
               <div
                 key={saga.id}
