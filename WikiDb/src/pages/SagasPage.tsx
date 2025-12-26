@@ -1,22 +1,11 @@
 import Header from "../Components/Header";
-import { Tv, Play } from "lucide-react";
-import Menu from '../Components/Menu'
+import { Tv, Play, X } from "lucide-react";
+import Menu from "../Components/Menu";
 import Footer from "../Components/Footer";
-import { useEffect } from "react";
+import { useState } from "react";
+import {sagas} from '../data/SagasData'
 
-const sagas = [
-  {
-    id: 1,
-    title: "Saga do Torneio de Artes Marciais",
-    description:
-      "A jornada do jovem Goku começa quando conhece Bulma em busca das Esferas do Dragão. Participa de diversos torneios de artes marciais, enfrentando adversários cada vez mais fortes.",
-    episodes: 153,
-    series: "Dragon Ball",
-    color: "#047857",
-  },
-];
-
-const series = [
+const seriesList = [
   "Todas",
   "Dragon Ball",
   "Dragon Ball Z",
@@ -25,23 +14,29 @@ const series = [
 ];
 
 export default function SagasPage() {
+  const [activeVideoUrl, setActiveVideoUrl] = useState<string | null>(null);
+  const [expandedSaga, setExpandedSaga] = useState<number | null>(null);
 
-  useEffect(() => {
-    const getSeries = async () =>{
-      const response = await fetch('https://superflixapi.run/lista?category=anime&type=tmdb&format=json&order=asc')
-      const dataJSON = response.json()
+  const openPlayer = (tmdbId: string, season: number, episode: number) => {
+    setActiveVideoUrl(
+      `https://superflixapi.buzz/serie/${tmdbId}/${season}/${episode}`
+    );
+  };
 
-      console.log(dataJSON)
-    }
-    getSeries()
-  })
+  const closePlayer = () => {
+    setActiveVideoUrl(null);
+  };
+
+  const toggleSaga = (sagaId: number) => {
+    setExpandedSaga(expandedSaga === sagaId ? null : sagaId);
+  };
 
   return (
-    <section className="pt-24! min-h-screen bg-linear-to-b from-slate-900 via-slate-950 to-black text-white font-sans flex flex-col">
+    <section className="pt-24! min-h-screen bg-linear-to-b from-slate-900 via-slate-950 to-black text-white font-sans flex flex-col relative">
       <Menu />
-      
+
       <Header
-        subtitle="dkajsdklsakld"
+        subtitle="Explore as jornadas épicas"
         title="Sagas"
         icon={Tv}
         colorHeaderIcon="#60a5fa89"
@@ -54,14 +49,14 @@ export default function SagasPage() {
             Série
           </label>
           <div className="flex flex-wrap gap-2">
-            {series.map((serie, index) => (
+            {seriesList.map((serie, index) => (
               <button
                 key={index}
                 className={`px-4! py-2! rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap
                   bg-slate-800/40 border border-slate-700/50 text-slate-400 hover:bg-slate-800/60 hover:text-white hover:border-slate-600
                   ${
                     index === 0
-                      ? "bg-amber-500 text-white border-amber-500 hover:bg-amber-400"
+                      ? "bg-amber-500! text-white! border-amber-500!"
                       : ""
                   }`}
               >
@@ -80,45 +75,77 @@ export default function SagasPage() {
             {sagas.map((saga) => (
               <div
                 key={saga.id}
-                className="group bg-slate-900/40 border border-slate-700/50 rounded-2xl overflow-hidden hover:bg-slate-900/60 hover:border-amber-400/30 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 cursor-pointer"
+                className="bg-slate-900/40 border border-slate-700/50 rounded-2xl overflow-hidden shadow-lg transition-all duration-300"
               >
-                <div className="flex lg:flex-row flex-col">
-                  <div className="w-full lg:w-60 lg:min-w-[240px] h-60 lg:h-[240px] bg-linear-to-br from-emerald-600 to-emerald-500 flex items-center justify-center relative">
-                    <Play className="w-20 h-20 text-white/40 group-hover:text-white/70 transition-all duration-300" strokeWidth={1.5} />
+              {/* Card*/}
+                <div
+                  onClick={() => toggleSaga(saga.id)}
+                  className="group flex lg:flex-row flex-col hover:bg-slate-900/60 hover:border-amber-400/30 transition-all duration-300 cursor-pointer"
+                >
+                  <div className="w-full lg:w-60 lg:min-w-[240px] h-48 lg:h-[240px] bg-linear-to-br from-emerald-600 to-emerald-500 flex items-center justify-center relative overflow-hidden">
+                    <Play
+                      className="w-16 h-16 text-white/40 group-hover:text-white/90 group-hover:scale-110 transition-all duration-500"
+                      fill="currentColor"
+                    />
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
                   </div>
 
-                  <div className="p-6! lg:p-8! flex-1 flex flex-col justify-between relative">
+                  <div className="p-6 lg:p-8! flex-1 flex flex-col justify-between">
                     <div>
                       <span className="inline-block bg-emerald-900/50 border border-emerald-500/30 text-emerald-300 px-3! py-1! rounded-full text-xs font-semibold mb-4">
                         {saga.series}
                       </span>
-                      <h3 className="text-2xl lg:text-3xl font-bold mb-4! leading-tight">
+                      <h3 className="text-2xl lg:text-3xl font-bold mb-4! leading-tight group-hover:text-amber-400 transition-colors">
                         {saga.title}
                       </h3>
-                      <p className="text-slate-400 text-base leading-relaxed mb-6!">
+                      <p className="text-slate-400 text-base leading-relaxed mb-6! line-clamp-3">
                         {saga.description}
                       </p>
-                      <div className="text-slate-500 text-sm flex items-center gap-2">
-                        <svg
-                          className="w-4 h-4"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          viewBox="0 0 24 24"
-                        >
-                          <rect x="3" y="3" width="18" height="18" rx="2" />
-                          <path d="M3 9h18" />
-                          <path d="M9 21V9" />
-                        </svg>
-                        <span>{saga.episodes} eps</span>
-                      </div>
                     </div>
-                    
-                    <div className="absolute top-6 lg:top-8 right-6 lg:right-8 bg-amber-900/80 backdrop-blur-sm text-amber-400 w-12 h-12 lg:w-14 lg:h-14 rounded-full flex items-center justify-center text-lg lg:text-2xl font-bold border-2 border-amber-500/30">
-                      #1
+
+                    <div className="text-slate-500 text-sm flex items-center gap-2 font-medium">
+                      <Tv className="w-4 h-4" />
+                      <span>{saga.episodes.length} episódios</span>
                     </div>
                   </div>
                 </div>
+
+                {expandedSaga === saga.id && (
+                  <div className="border-t border-slate-700/50 bg-slate-900/60 p-6!">
+                    <h4 className="text-lg font-semibold mb-4 text-amber-400">
+                      Episódios
+                    </h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                      {saga.episodes.map((episode) => (
+                        <button
+                          key={episode.number}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            openPlayer(
+                              saga.tmdbId,
+                              episode.season,
+                              episode.number
+                            );
+                          }}
+                          className="group/ep flex items-center gap-3 p-4 bg-slate-800/40 hover:bg-slate-800/80 border border-slate-700/50 hover:border-amber-500/50 rounded-xl transition-all duration-300 text-left"
+                        >
+                          <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold group-hover/ep:bg-emerald-600/40 transition-colors">
+                            {episode.number}
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <p className="text-white font-medium truncate group-hover/ep:text-amber-400 transition-colors">
+                              {episode.title}
+                            </p>
+                            <p className="text-slate-500 text-xs">
+                              Temporada {episode.season}
+                            </p>
+                          </div>
+                          <Play className="w-5 h-5 text-slate-600 group-hover/ep:text-amber-500 transition-colors flex-shrink-0" />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -126,6 +153,29 @@ export default function SagasPage() {
       </main>
 
       <Footer />
+
+      {activeVideoUrl && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 bg-black/95 backdrop-blur-md">
+          <div className="relative w-full max-w-6xl aspect-video bg-black rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/10">
+            <button
+              onClick={closePlayer}
+              className="absolute top-4 right-4 z-[110] p-2 bg-black/60 hover:bg-red-600 text-white rounded-full transition-all hover:scale-110"
+              title="Fechar Player"
+            >
+              <X size={28} />
+            </button>
+
+            <iframe
+              src={activeVideoUrl}
+              className="w-full h-full"
+              allowFullScreen
+              frameBorder="0"
+              scrolling="no"
+              allow="autoplay; encrypted-media"
+            ></iframe>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

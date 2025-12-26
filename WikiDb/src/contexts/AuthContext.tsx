@@ -36,6 +36,9 @@ export const ContextWikiProvider = ({ children }: ChildrenProps) => {
     const saved = localStorage.getItem("favorites");
     return saved ? JSON.parse(saved) : [];
   });
+  const [activeVideoUrl, setActiveVideoUrl] = useState<string | null>(null)
+
+  
 
   const GetCaracters = async () => {
     setLoading(true);

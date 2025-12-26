@@ -6,6 +6,7 @@ import TechniquesPage from '../pages/Techniques'
 import CompareCharacters from '../pages/CompareCaracterPage'
 import QuizPage from '../pages/QuizPage'
 import FavoritesPage from '../pages/FavoritesPage'
+import SagasDetailPage  from '../pages/SeriePage'
 
 export const ROUTES = {
     HOME: '/',
@@ -15,7 +16,8 @@ export const ROUTES = {
     TECHNIQUES: '/techniques',
     COMPARE_CHARACTERS: '/compare-caracters',
     QUIZ: '/quiz',
-    FAVORITE: '/favorites'
+    FAVORITE: '/favorites',
+    SERIES: '/sagas/series'
 }
 
 export const routeConfig = [
@@ -26,5 +28,6 @@ export const routeConfig = [
     {path: ROUTES.TECHNIQUES, element: <TechniquesPage/>},
     {path: ROUTES.COMPARE_CHARACTERS, element: <CompareCharacters/>},
     {path: ROUTES.QUIZ, element: <QuizPage/>},
-    {path: ROUTES.FAVORITE, element: <FavoritesPage/>}
+    {path: ROUTES.FAVORITE, element: <FavoritesPage/>},
+    {path: ROUTES.SERIES, element: <SagasDetailPage/>}
 ]
