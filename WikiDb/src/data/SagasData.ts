@@ -879,6 +879,29 @@ export const sagas: SeriesSuperFlixProps[] = [
   series: "Dragon Ball",
   color: "#2563eb",
   tmdbId: "62715",
+},
+
+{
+  id: 6,
+  title: "Dragon Ball DAIMA",
+  description: "Devido a uma conspiração, Goku e seus amigos são transformados em crianças. Para reverter o feitiço, eles embarcam em uma aventura pelo Reino dos Demônios em busca das Esferas do Dragão de Tamagami.",
+  episodes: [
+    { number: 1, title: "Conspiração", season: 1 },
+    { number: 2, title: "Glório", season: 1 },
+    { number: 3, title: "Daima", season: 1 },
+    { number: 4, title: "Perigo", season: 1 },
+    { number: 5, title: "Panzy", season: 1 },
+    { number: 6, title: "Relâmpago", season: 1 },
+    { number: 7, title: "Colisão", season: 1 },
+    { number: 8, title: "Tamagami", season: 1 },
+    { number: 9, title: "Mal-entendido", season: 1 },
+    { number: 10, title: "Oceano", season: 1 },
+    { number: 11, title: "Dois Contra o Rei", season: 1 },
+    { number: 12, title: "Decisão", season: 1 },
+  ],
+  series: "Dragon Ball",
+  color: "#7c3aed",
+  tmdbId: "243543",
 }
 
 ];
