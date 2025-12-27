@@ -45,7 +45,7 @@ export default function SagasPage() {
       <main className="flex-1 px-4! py-8! md:px-8! md:py-12! lg:px-16! lg:py-16!">
         <section>
           <h2 className="text-2xl md:text-3xl font-bold mb-6! pl-4! border-l-4 border-amber-500">
-            Dragon Ball
+            Dragon Ball Animes
           </h2>
 
           <div className="space-y-4! mb-8!">
