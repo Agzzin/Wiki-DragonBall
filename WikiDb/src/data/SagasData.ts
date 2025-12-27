@@ -899,9 +899,9 @@ export const sagas: SeriesSuperFlixProps[] = [
     { number: 11, title: "Dois Contra o Rei", season: 1 },
     { number: 12, title: "Decisão", season: 1 },
   ],
-  series: "Dragon Ball",
+  series: "Dragon Ball Daima",
   color: "#7c3aed",
-  tmdbId: "243543",
+  tmdbId: "236994",
 }
 
 ];
