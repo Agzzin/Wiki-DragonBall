@@ -6,7 +6,7 @@ interface CharacterListProps {
   onSelect: (name: string) => void;
 }
 
-export function ImageCaracterList({ characters, onSelect, selectedName, selectedImage }: CharacterListProps & { selectedName: string | null; selectedImage: string | null }) {
+export function ImageCaracterList({ onSelect, selectedName, selectedImage }: CharacterListProps & { selectedName: string | null; selectedImage: string | null }) {
   return (
     <section className="flex items-center justify-center w-32 h-32 bg-slate-700/50 rounded-full mb-8 transition-all hover:bg-slate-700/70 hover:scale-105">
       {selectedImage ? (

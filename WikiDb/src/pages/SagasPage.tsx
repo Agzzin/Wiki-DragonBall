@@ -59,7 +59,7 @@ export default function SagasPage() {
                   onClick={() => toggleSaga(saga.id)}
                   className="group flex lg:flex-row flex-col hover:bg-slate-900/60 hover:border-amber-400/30 transition-all duration-300 cursor-pointer"
                 >
-                  <div className="w-full lg:w-60 lg:min-w-[240px] h-48 lg:h-[240px] bg-linear-to-br from-emerald-600 to-emerald-500 flex items-center justify-center relative overflow-hidden">
+                  <div className="w-full lg:w-60 lg:min-w-60 lg:h-60 bg-linear-to-br from-emerald-600 to-emerald-500 flex items-center justify-center relative overflow-hidden">
                     <Play
                       className="w-16 h-16 text-white/40 group-hover:text-white/90 group-hover:scale-110 transition-all duration-500"
                       fill="currentColor"
@@ -106,7 +106,7 @@ export default function SagasPage() {
                           }}
                           className="group/ep flex items-center gap-3 p-4 bg-slate-800/40 hover:bg-slate-800/80 border border-slate-700/50 hover:border-amber-500/50 rounded-xl transition-all duration-300 text-left"
                         >
-                          <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold group-hover/ep:bg-emerald-600/40 transition-colors">
+                          <div className="shrink-0 w-10 h-10 rounded-lg bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold group-hover/ep:bg-emerald-600/40 transition-colors">
                             {episode.number}
                           </div>
                           <div className="flex-1 min-w-0">
@@ -117,7 +117,7 @@ export default function SagasPage() {
                               Temporada {episode.season}
                             </p>
                           </div>
-                          <Play className="w-5 h-5 text-slate-600 group-hover/ep:text-amber-500 transition-colors flex-shrink-0" />
+                          <Play className="w-5 h-5 text-slate-600 group-hover/ep:text-amber-500 transition-colors shrink-0" />
                         </button>
                       ))}
                     </div>
@@ -141,7 +141,7 @@ export default function SagasPage() {
                   onClick={() => openPlayerFilms(movie.imdbId)}
                   className="group flex lg:flex-row flex-col hover:bg-slate-900/60 hover:border-amber-400/30 transition-all duration-300 cursor-pointer"
                 >
-                  <div className="w-full lg:w-60 lg:min-w-[240px] h-48 lg:h-[240px] bg-linear-to-br from-orange-600 to-orange-500 flex items-center justify-center relative overflow-hidden">
+                  <div className="w-full lg:w-60 lg:min-w-60 lg:h-60 bg-linear-to-br from-orange-600 to-orange-500 flex items-center justify-center relative overflow-hidden">
                     <Play
                       className="w-16 h-16 text-white/40 group-hover:text-white/90 group-hover:scale-110 transition-all duration-500"
                       fill="currentColor"
@@ -171,11 +171,11 @@ export default function SagasPage() {
 
       <Footer />
       {activeVideoUrl && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 bg-black/95 backdrop-blur-md">
+        <div className="fixed inset-0 z-100 flex items-center justify-center p-4 md:p-8 bg-black/95 backdrop-blur-md">
           <div className="relative w-full max-w-6xl aspect-video bg-black rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/10">
             <button
               onClick={closePlayer}
-              className="absolute top-4 right-4 z-[110] p-2 bg-black/60 hover:bg-red-600 text-white rounded-full transition-all hover:scale-110"
+              className="absolute top-4 right-4 z-110 p-2 bg-black/60 hover:bg-red-600 text-white rounded-full transition-all hover:scale-110"
               title="Fechar Player"
             >
               <X size={28} />
@@ -195,11 +195,11 @@ export default function SagasPage() {
 
 
       {activeVideoFilmUrl && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 bg-black/95 backdrop-blur-md">
+        <div className="fixed inset-0 z-100 flex items-center justify-center p-4 md:p-8 bg-black/95 backdrop-blur-md">
           <div className="relative w-full max-w-6xl aspect-video bg-black rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/10">
             <button
               onClick={closePlayer}
-              className="absolute top-4 right-4 z-[110] p-2 bg-black/60 hover:bg-red-600 text-white rounded-full transition-all hover:scale-110"
+              className="absolute top-4 right-4 z-110 p-2 bg-black/60 hover:bg-red-600 text-white rounded-full transition-all hover:scale-110"
               title="Fechar Player"
             >
               <X size={28} />
