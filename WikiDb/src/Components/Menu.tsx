@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Home, Users, Tv, Zap, Scale, HelpCircle, Heart, BookOpen, Menu, X } from "lucide-react";
+import { Home, Users, Tv, Zap, Scale, Heart, BookOpen, Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 function DragonBallMenu() {
@@ -16,7 +16,6 @@ function DragonBallMenu() {
     { path: "/sagas", icon: Tv, label: "Sagas" },
     { path: "/techniques", icon: Zap, label: "Técnicas" },
     { path: "/compare-caracters", icon: Scale, label: "Comparar" },
-    { path: "/quiz", icon: HelpCircle, label: "Quiz" },
     { path: "/favorites", icon: Heart, label: "Favoritos" },
   ];
 

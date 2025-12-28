@@ -820,7 +820,7 @@ export const sagas: SeriesSuperFlixProps[] = [
     { number: 77, title: "Vamos Participar do Torneio? Confronto Contra os Guerreiros do Universo 9!", season: 1 },
     { number: 78, title: "Mesmo a Destruição dos 12 Universos? O Verdadeiro Torneio do Poder!", season: 1 },
     { number: 79, title: "O 9º Universo se Prepara para o Torneio do Poder", season: 1 },
-    { number: 80, title: "Reúna a Equipe! Todos os Dez Guerreiros!!", season: 1 },
+    { number: 80, title: "Reúna a Equipe! Todos os Dez Guerreiros!!", season: 1   },
     { number: 81, title: "Bergamo, o Esmagador, Contra Goku! Qual Deles Irá Vencer?!", season: 1 },
     { number: 82, title: "Goku Morre! O Assassino Hit Está Vindo!", season: 1 },
     { number: 83, title: "Vença o Assassino Invisível! Reviva, Goku!", season: 1 },
