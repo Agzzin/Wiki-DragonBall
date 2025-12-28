@@ -21,7 +21,7 @@ export default function CaracterPage() {
       <section className="sm: pt-16! flex justify-center items-center"></section>
 
       <Header
-        subtitle="akdjasldkasjdk"
+        subtitle="Personagens lembráveis"
         title="Personagens"
         icon={Users}
         colorHeaderIcon="#fb923c71"

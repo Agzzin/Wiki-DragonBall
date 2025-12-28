@@ -8,7 +8,6 @@ import { CharacterList, ImageCaracterList } from "../Components/CaracterList";
 
 export default function CompareCharacters() {
   const { caracters } = useWikiContext();
-
   const [searchValues, setSearchValues] = useState(["", "", ""]);
   const [focusedCard, setFocusedCard] = useState<number | null>(null);
   const [selectedImage, setSelectedImage] = useState<(string | null)[]>([
@@ -50,7 +49,6 @@ export default function CompareCharacters() {
     }
   };
 
-  // Pega os personagens selecionados
   const selectedCharacters = searchValues
     .map((name) => caracters.find((c) => c.name === name))
     .filter((c): c is NonNullable<typeof c> => c !== undefined);
@@ -64,8 +62,8 @@ export default function CompareCharacters() {
       </section>
       <section className="mb-12!">
         <Header
-          subtitle="Compare os poderes dos personagens"
-          title="Comparar"
+          subtitle="Compare cada personagem"
+          title="Compare"
           colorHeaderIcon="#c084fc77"
           colorIcon="#C084FC"
           icon={Swords}
