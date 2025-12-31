@@ -8,8 +8,8 @@ import {
   Shield,
   BookOpen,
   Swords,
-  Brain,
   Heart,
+  Clock,
 } from "lucide-react";
 import { CardCuriosities } from "../Components/CardCuriosities";
 import { CardPersonInitial } from "../Components/CardPersonInitial";
@@ -166,7 +166,7 @@ function WikiInitialPage() {
               </p>
             </div>
 
-            <div className="pr-4! pl-4! grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 pb-32! place-items-center">
+            <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 pb-32! place-items-center">
               <div className="text-left group relative overflow-hidden cursor-pointer rounded-3xl px-10! py-23! bg-linear-to-br from-purple-600 to-purple-400 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
                 <Swords className="w-15! h-15! mb-6 text-white stroke-[1.8]" />
                 <h3 className="text-2xl font-semibold text-white mb-2">
@@ -176,16 +176,17 @@ function WikiInitialPage() {
                   Compare até 3 personagens lado a lado
                 </p>
               </div>
-
-              <div className="group relative overflow-hidden cursor-pointer rounded-3xl px-10! py-23! bg-linear-to-br from-pink-500 to-pink-300 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] text-left">
-                <Brain className="w-15 h-15 mb-6 text-white stroke-[1.8]" />
+              
+              <div className="text-left group relative overflow-hidden cursor-pointer rounded-3xl px-10! py-23! bg-linear-to-br from-[#C7268A] via-[#A824B0] to-[#8823C5] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+                <Clock className="w-15! h-15! mb-6 text-white stroke-[1.8]" />
                 <h3 className="text-2xl font-semibold text-white mb-2">
-                  Quiz
+                  Linha do tempo
                 </h3>
                 <p className="text-xl text-white/80 leading-normal w-72!">
-                  Teste seus conhecimentos sobre Dragon Ball
+                  Explore a cronologia completa de Dragon Ball
                 </p>
               </div>
+
 
               <div className="text-left group relative overflow-hidden cursor-pointer rounded-3xl px-10! py-23! bg-linear-to-br from-red-500 to-red-400 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
                 <Heart className="w-15! h-15! mb-6 text-white stroke-[1.8]" />

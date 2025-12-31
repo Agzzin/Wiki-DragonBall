@@ -244,7 +244,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="absolute top-[-12px] left-1/2 transform -translate-x-1/2">
+          <div className="absolute top-3 left-1/2 transform -translate-x-1/2">
             <div className={`w-12 h-12 rounded-full border-2 border-t-transparent animate-spin ${
               ultraInstinct ? 'border-cyan-400' : 'border-orange-500'
             }`} style={{ animationDuration: '3s' }} />

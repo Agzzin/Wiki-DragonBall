@@ -20,7 +20,7 @@ export function CardPersonInitial({
   return (
     <section className="relative bg-linear-to-br from-[#1c2739] via-[#192335] to-[#1d283a] border border-white/20 rounded-2xl w-65 max-w-65 h-auto sm:h-105 sm:w-65 sm:max-w-65 sm:aspect-260/420 overflow-hidden flex flex-col cursor-pointer transition-all duration-300 ease-in-out hover:-translate-y-1.5 hover:border-[#e95f0d] group mx-auto sm:mx-0">
       <section className="absolute top-3 right-3 z-10 bg-yellow-400/53 border border-yellow-400/80 rounded-xl px-2.5! py-1! flex items-center justify-center gap-1.5">
-        <p className="text-black font-semibold text-xs whitespace-nowrap overflow-hidden text-ellipsis">
+        <p className="text-white font-semibold text-xs whitespace-nowrap overflow-hidden text-ellipsis">
           {race}
         </p>
       </section>
@@ -52,12 +52,12 @@ export function CardPersonInitial({
         <section className="flex gap-1 flex-wrap pt-1 items-center">
           {Array.isArray(transform) ? (
             transform.map((item, index) => (
-              <span key={index} className="bg-yellow-300/30 border border-yellow-400/80 rounded-xl px-1! py-1! flex items-center justify-center gap-1 text-sm">
+              <span key={index} className="bg-yellow-300/30 border border-yellow-400/80 rounded-xl px-1! py-1! flex items-center justify-center gap-1 text-sm text-white">
                 {item}
               </span>
             ))
           ) : (
-            <span className="bg-yellow-300/30 border border-yellow-400/80 rounded-xl px-2.5! py-1! flex items-center justify-center gap-1.5 text-sm">{transform}</span>
+            <span className="bg-yellow-300/30 border border-yellow-400/80 rounded-xl px-2.5! py-1! flex items-center justify-center gap-1.5 text-sm text-white">{transform}</span>
           )}
         </section>
       </section>
