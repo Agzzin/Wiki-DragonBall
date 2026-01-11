@@ -3,7 +3,7 @@
 Este é um sistema web interativo focado no universo de Dragon Ball. O objetivo é oferecer uma interface amigável para explorar dados sobre personagens e curiosidades da obra.
 
 ## 🌐 Link do Projeto
-🚀 [Acesse aqui a Wiki Live](https://wiki-dragon-ball-omsz2pwmo-agzzins-projects.vercel.app/)
+🚀 [Acesse aqui a Wiki Live](https://wiki-dragon-ball.vercel.app/)
 
 ---
 
